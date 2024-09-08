@@ -1,0 +1,2 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"izi_data_template_sale.access_model_crud_group_user","Model Name Access for Group User: CRUD","izi_data_template_sale.model_model_name",,1,1,1,1

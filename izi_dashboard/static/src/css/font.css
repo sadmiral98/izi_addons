@@ -1,0 +1,16 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('font/Roboto/Roboto-Regular.ttf');
+}
+@font-face {
+    font-family: 'Roboto-Light';
+    src: url('font/Roboto/Roboto-Light.ttf');
+}
+@font-face {
+    font-family: 'Roboto-Thin';
+    src: url('font/Roboto/Roboto-Thin.ttf');
+}
+@font-face {
+    font-family: 'JetBrainsMono';
+    src: url('font/JetBrainsMono/JetBrainsMono-Regular.ttf');
+}

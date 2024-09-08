@@ -1,0 +1,245 @@
+/* ------------- amCharts - override labelling(tspan) svg agar tampil-- */
+svg [aria-hidden="true"], [aria-hidden="1"] {
+    display: block !important;
+  }
+
+/* ------------- Global - flex ------------ */
+.izi_view .flex-body {
+    display: flex !important;
+    align-items: center !important;
+    flex-wrap: wrap;
+}
+.izi_view .flex-only {
+    display: flex !important;
+}
+.izi_view .flex-row {
+    flex-direction: row;
+    display: flex !important;
+}
+.izi_view .flex-column {
+    flex-direction: column;
+    display: flex !important;
+}
+.izi_view .flex-1 {
+    flex: 1;
+}
+.izi_view .flex-2 {
+    flex: 2;
+}
+.izi_view .flex-3 {
+    flex: 3;
+}
+
+/* ------------- Global - Margin Padding Size ------------ */
+.izi_view .my-0{
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+}
+.izi_view .mr-03{
+    margin-right : 0.3em;
+}
+.izi_view .ml-03{
+    margin-left : 0.3em;
+}
+
+.izi_view .h-100{
+    height: 100% !important;
+}
+
+/* --- ScoreCard style --- */
+.scorecard {
+    font-family: 'Roboto' !important;
+    padding: 10px;
+    cursor: pointer;
+    width: 100%;
+}
+.scorecard .circle-ring{
+    max-height: 100%;
+}
+.scorecard .circle-ring .percentage{
+    font-size: 0.15em !important;
+    font-weight: bold;
+}
+
+.scorecard .flex-column .flex-row{
+    align-items: baseline;
+}
+.scorecard-chart {
+    height: inherit;
+    padding: 5px 0px;
+    text-align: center;
+}
+.scorecard-img {
+    width: 72px;
+    padding: 0 10px 0 10px;
+}
+.scorecard-img-container {
+    /* text-align: center; */ 
+    text-align: right;
+    /* padding-right: 20px; */
+}
+.scorecard-img-container i.material-icons {
+    font-size: 36px;
+}
+.scorecard-img-container .scorecard-img {
+    /* display: block; */
+    height: 45px;
+    width: auto;
+    margin: auto;
+    padding: 0;
+}
+.scorecard-title-img {
+    width: 100px;
+}
+.scorecard-title {
+    font-size: 14px;
+    font-weight: 300;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+.scorecard-value {
+    font-size: 20px;
+    font-weight: bold;
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.scorecard-target {
+    font-size: 10px;
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.scorecard-particle {
+    margin: 0 0.5em 0 0.5em;
+    font-size: 14px !important;
+}
+
+.scorecard-status {
+    margin: 0 0 0 0.5em;
+    /* font-weight: bold; */
+    font-size: 11px;
+}
+
+.scorecard-status.label {
+    border: 1px solid;
+    border-radius: 30px;
+    padding: 0 6px 0 3px;
+    min-width: fit-content;
+    line-height: 18px;
+    letter-spacing: 0.5px;
+    background-color: #2B9EFF;
+    color: white;
+}
+.scorecard-status.label .material-icons{
+    float: left;
+    font-size: 14px;
+    line-height: 18px;
+    margin-right: 0px;
+}
+
+.scorecard-status.label.label-danger {
+    background-color: #cc2e2e;
+}
+.scorecard-status.label.label-success {
+    background-color: #2B9EFF;
+}
+
+/* --- ScoreCard SM --- */
+
+.scorecard-sm{
+    padding: 0 25px 0 30px !important;
+    display: flex !important;
+    align-items: center !important;
+    flex-wrap: wrap;
+    border-left : 3px solid #2B9EFF;
+    border-radius: 8px;
+}
+
+/* .scorecard-sm .flex-column {
+    margin: 0 5px 0 15px;
+    min-width: 0;
+} */
+
+.scorecard-sm .scorecard-chart:has(.circle-ring){
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 8px 0px;
+    min-width: 100px;
+}
+
+.scorecard-sm .circle-ring{
+    max-width: 120px;
+}
+
+.scorecard-sm .scorecard-status{
+    margin: 0 0.5em;
+}
+
+.scorecard-sm .izi_alert{
+    padding: 6px;
+    margin-top: 0px;
+}
+
+.scorecard-sm .izi_alert_icon{
+    padding-right: 0px;
+}
+.scorecard-sm .izi_alert_icon > span {
+    font-size: 36px;
+}
+.scorecard-sm .izi_alert h4{
+    margin-bottom: 0.3rem;
+}
+/* --- ScoreCard MD --- */
+
+
+
+/* --- Input Box --- */
+.izi-input-group{  
+    display: flex;
+    border-radius: 6px;
+    border: 1px solid #DDD;
+}
+.izi-input-group-pretend{
+    display: flex;
+    align-items: center;
+    padding: 0.375rem 0.7rem;
+    margin-bottom: 0;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #e9ecef;
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+    border: 0.5px solid #DDD;
+    margin-left: -0.5px;
+}
+.izi-input-text{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0px 10px !important;
+    border: none !important;
+    max-width: none !important;
+
+    border-radius: 6px;
+    width: 100%;
+    outline-color: #06C;
+    outline-width: 1px;
+    font-size: 14px;
+}
+
+.dropdown-menu.izi_select_theme_container.show{
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+
+

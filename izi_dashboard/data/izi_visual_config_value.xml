@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data noupdate="0">
+    <record model="izi.visual.config.value" id="izi_dashboard.izi_visual_config_value_top">
+      <field name="name">top</field>
+      <field name="title">Top</field>
+      <field name="value_type">string</field>
+      <field name="visual_config_ids" eval="[(6, 0, [ref('izi_dashboard.izi_visual_config_legend_position')])]"></field>
+    </record>
+    <record model="izi.visual.config.value" id="izi_dashboard.izi_visual_config_value_bottom">
+      <field name="name">bottom</field>
+      <field name="title">Bottom</field>
+      <field name="value_type">string</field>
+      <field name="visual_config_ids" eval="[(6, 0, [ref('izi_dashboard.izi_visual_config_legend_position')])]"></field>
+    </record>
+    <record model="izi.visual.config.value" id="izi_dashboard.izi_visual_config_value_right">
+      <field name="name">right</field>
+      <field name="title">Right</field>
+      <field name="value_type">string</field>
+      <field name="visual_config_ids" eval="[(6, 0, [ref('izi_dashboard.izi_visual_config_legend_position')])]"></field>
+    </record>
+    <record model="izi.visual.config.value" id="izi_dashboard.izi_visual_config_value_left">
+      <field name="name">left</field>
+      <field name="title">Left</field>
+      <field name="value_type">string</field>
+      <field name="visual_config_ids" eval="[(6, 0, [ref('izi_dashboard.izi_visual_config_legend_position')])]"></field>
+    </record>
+    <record model="izi.visual.config.value" id="izi_dashboard.izi_visual_config_value_none">
+      <field name="name">none</field>
+      <field name="title">None</field>
+      <field name="value_type">string</field>
+      <field name="visual_config_ids" eval="[(6, 0, [ref('izi_dashboard.izi_visual_config_legend_position')])]"></field>
+    </record>
+    <!-- 00 -->
+    <record model="izi.visual.config.value" id="izi_dashboard.izi_visual_config_value_half">
+      <field name="name">half</field>
+      <field name="title">Half</field>
+      <field name="value_type">string</field>
+      <field name="visual_config_ids" eval="[(6, 0, [ref('izi_dashboard.izi_visual_config_circle_type')])]"></field>
+    </record>
+    <record model="izi.visual.config.value" id="izi_dashboard.izi_visual_config_value_three_quarters">
+      <field name="name">threeQuarters</field>
+      <field name="title">Three Quarters</field>
+      <field name="value_type">string</field>
+      <field name="visual_config_ids" eval="[(6, 0, [ref('izi_dashboard.izi_visual_config_circle_type')])]"></field>
+    </record>
+    <record model="izi.visual.config.value" id="izi_dashboard.izi_visual_config_value_full">
+      <field name="name">full</field>
+      <field name="title">Full</field>
+      <field name="value_type">string</field>
+      <field name="visual_config_ids" eval="[(6, 0, [ref('izi_dashboard.izi_visual_config_circle_type')])]"></field>
+    </record>
+
+    <record model="izi.visual.config.value" id="izi_dashboard.izi_visual_config_allCountries">
+      <field name="name">ALL</field>
+      <field name="title">All Countries</field>
+      <field name="value_type">string</field>
+      <field name="visual_config_ids" eval="[(6, 0, [ref('izi_dashboard.izi_visual_config_map_view')])]"></field>
+    </record>
+
+    <!-- Scorecard Style -->
+    <record model="izi.visual.config.value" id="izi_dashboard.izi_visual_config_value_style_1">
+      <field name="name">style_1</field>
+      <field name="title">Style 1</field>
+      <field name="value_type">string</field>
+      <field name="visual_config_ids" eval="[(6, 0, [ref('izi_dashboard.izi_visual_config_scorecard_style')])]"></field>
+    </record>
+    <record model="izi.visual.config.value" id="izi_dashboard.izi_visual_config_value_style_2">
+      <field name="name">style_2</field>
+      <field name="title">Style 2</field>
+      <field name="value_type">string</field>
+      <field name="visual_config_ids" eval="[(6, 0, [ref('izi_dashboard.izi_visual_config_scorecard_style')])]"></field>
+    </record>
+    <record model="izi.visual.config.value" id="izi_dashboard.izi_visual_config_value_style_3">
+      <field name="name">style_3</field>
+      <field name="title">Style 3</field>
+      <field name="value_type">string</field>
+      <field name="visual_config_ids" eval="[(6, 0, [ref('izi_dashboard.izi_visual_config_scorecard_style')])]"></field>
+    </record>
+    <record model="izi.visual.config.value" id="izi_dashboard.izi_visual_config_value_style_4">
+      <field name="name">style_4</field>
+      <field name="title">Style 4</field>
+      <field name="value_type">string</field>
+      <field name="visual_config_ids" eval="[(6, 0, [ref('izi_dashboard.izi_visual_config_scorecard_style')])]"></field>
+    </record>
+    <record model="izi.visual.config.value" id="izi_dashboard.izi_visual_config_value_style_5">
+      <field name="name">style_5</field>
+      <field name="title">Style 5</field>
+      <field name="value_type">string</field>
+      <field name="visual_config_ids" eval="[(6, 0, [ref('izi_dashboard.izi_visual_config_scorecard_style')])]"></field>
+    </record>
+  </data>
+</odoo>
+
+

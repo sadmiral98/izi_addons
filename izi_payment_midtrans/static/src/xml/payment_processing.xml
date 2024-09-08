@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates id="payment.payment" xml:space="preserve">
+  <t t-name="payment.display_tx_list" t-extend="payment.display_tx_list">
+    <t t-jquery='div[t-if="tx_done.length > 0 || tx_authorized.length > 0 || tx_pending.length > 0"]'
+       t-operation='replace'>
+      <div t-if="tx_done.length > 0 || tx_authorized.length > 0">
+        <h1>Payments received: Replaced</h1>
+        <div class="list-group">
+          <!-- Done transactions -->
+          <t t-foreach="tx_done" t-as="tx">
+            <a t-att-href="tx['return_url']" class="list-group-item">
+              <h4 class="list-group-item-heading mb5">
+                <t t-esc="tx['reference']"/>
+                <span class="badge pull-right"><t t-esc="tx['amount']"/>
+                  <t t-esc="tx['currency']"/></span>
+              </h4>
+              <small class="list-group-item-text">
+                <t t-if="!tx['is_processed']">
+                  Your order is being processed, please wait ... <i class="fa fa-cog fa-spin"/>
+                </t>
+                <t t-else="">
+                  Your order has been processed.<br/>
+                  Click here to be redirected to the confirmation page.
+                </t>
+                </small>
+            </a>
+          </t>
+          <!-- Pending transactions -->
+          <t t-foreach="tx_pending" t-as="tx">
+            <a t-att-href="tx['return_url']" class="list-group-item">
+              <h4 class="list-group-item-heading mb5">
+                <t t-esc="tx['reference']"/>
+                <span class="badge pull-right"><t t-esc="tx['amount']"/>
+                  <t t-esc="tx['currency']"/></span>
+              </h4>
+              <small class="list-group-item-text">
+                <t t-if="tx['message_to_display']">
+                  <t t-raw="tx['message_to_display']"/>
+                </t>
+                <t t-else="">
+                  Your payment is in pending state.<br/>
+                  You will be notified when the payment is fully confirmed.
+                  <br/>
+                  You can click here to be redirected to the confirmation page.
+                </t>
+                </small>
+            </a>
+          </t>
+          <!-- Authorized transactions -->
+          <t t-foreach="tx_authorized" t-as="tx">
+            <li class="list-group-item">
+              <h4 class="list-group-item-heading mb5">
+                <t t-esc="tx['reference']"/>
+                <span class="badge pull-right"><t t-esc="tx['amount']"/>
+                  <t t-esc="tx['currency']"/></span>
+              </h4>
+              <small class="list-group-item-text">
+                <t t-if="tx['message_to_display']">
+                  <t t-raw="tx['message_to_display']"/>
+                </t>
+                <t t-else="">
+                  Your payment has been received but need to be confirmed manually.<br/>
+                  You will be notified when the payment is confirmed.
+                </t>
+              </small>
+            </li>
+          </t>
+        </div>
+      </div>
+      <div t-if="tx_pending.length > 0">
+        <h1>Waiting for payment</h1>
+        <ul class="list-group">
+          <t t-foreach="tx_pending" t-as="tx">
+            <a t-att-href="tx['return_url']" class="list-group-item">
+              <h4 class="list-group-item-heading mb5">
+                  <t t-esc="tx['reference']"/>
+                <span class="badge pull-right"><t t-esc="tx['amount']"/>
+                  <t t-esc="tx['currency']"/></span>
+              </h4>
+              <small class="list-group-item-text">
+                <t t-if="tx['message_to_display']">
+                    <t t-raw="tx['message_to_display']"/>
+                </t>
+                <t t-else="">
+                  We are waiting for the payment acquirer to confirm the payment.
+                  </t>
+                </small>
+            </a>
+          </t>
+        </ul>
+      </div>
+    </t>
+  </t>
+</templates>

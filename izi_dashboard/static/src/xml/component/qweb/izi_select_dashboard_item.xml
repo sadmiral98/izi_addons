@@ -1,0 +1,15 @@
+<template>
+    <div t-name="IZISelectDashboardItem" class="izi_select_dashboard_item izi_select_item" 
+        t-att-data-id="id" 
+        t-att-data-name="name"
+        t-att-data-write_date="write_date"
+        t-att-data-theme_name="theme_name">
+        <div class="izi_title" t-esc="name">Select Dashboard</div>
+        <div class="izi_subtitle">
+            <t t-esc="write_date"/>
+        </div>
+        <div class="izi_edit_dashboard_item izi_select_item_icon" title="Edit Dashboard">
+            <span class="material-icons" t-esc="'edit'"/>
+        </div>
+    </div>
+</template>

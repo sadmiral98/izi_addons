@@ -1,0 +1,85 @@
+.izi_dialog {
+    /* display: none; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    font-family: 'Roboto';
+    z-index: 10;
+}
+.izi_dialog_bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: black;
+    opacity: 0.55;
+    z-index: 9;
+}
+.izi_dialog_content {
+    display: flex;
+    flex-direction: column;
+
+    position: fixed;
+    z-index: 10;
+    width: 70%;
+    left: 15%;
+    height: 500px;
+    top: 50%;
+    margin-top: -250px;
+    border-radius: 8px;
+    background: white;
+    padding: 15px;
+    /* overflow-y: scroll; */
+}
+
+.izi_dialog_header{
+    display: flex;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+.izi_dialog_header #izi_dialog_close_btn .material-icons-outlined{
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.izi_dialog_body{
+    overflow-y: auto;
+}
+
+.izi_alert{
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    height: fit-content;
+    max-height: 100%;
+    padding: 20px;
+    /* margin-top: -49px; */
+    /* border-radius: 8px; */
+    overflow-y: scroll;
+}
+.izi_alert .col h4{ 
+    font-size: 13px;
+    color: #723735;
+    font-weight: bold;
+}
+.izi_alert_icon{
+    line-height: 50%;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+.izi_alert_icon > span{
+    font-size: 48px;
+}
+
+.modal-dialog.izi_modal_dialog_full {
+    max-width: 98% !important;
+}
+
+.modal-dialog.izi_modal_dialog_no_scroll .modal-body {
+    overflow: hidden !important;
+}
+

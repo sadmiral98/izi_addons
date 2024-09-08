@@ -1,0 +1,40 @@
+<odoo>
+<data noupdate="0">
+    <record model="izi.table" id="example_mysql">
+        <field name="name">Example MySQL</field>
+        <field name="source_id" search="[('type', '=', 'db_odoo')]"/>
+        <field name="is_stored" eval="True"/>
+        <field name="main_code">
+# Connect to MySQL
+mysql = izi.lib('mysql')
+mydb = mysql.connect(
+  host="mysql-rfam-public.ebi.ac.uk",
+  user="rfamro",
+  # password="",
+  port="4497",
+  database="Rfam",
+)
+mycursor = mydb.cursor(dictionary=True)
+mycursor.execute("SELECT * FROM clan LIMIT 100")
+myresult = mycursor.fetchall()
+res = []
+index = 1
+for r in myresult:
+  r['index'] = index
+  r['active'] = True
+  index += 1
+  res.append(r)
+
+if izi_table and res:
+  # Build Table Schma
+  izi_table.get_table_fields_from_dictionary(res[0])
+  izi_table.update_schema_store_table()
+
+  # Truncate and Insert Values
+  izi.query_execute('TRUNCATE izi_example_mysql;')
+  for r in res:
+    izi.query_insert('izi_example_mysql', r)
+        </field>
+    </record>
+</data>
+</odoo>

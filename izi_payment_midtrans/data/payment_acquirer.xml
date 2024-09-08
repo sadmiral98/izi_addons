@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data noupdate="1">
+    <record id="izi_payment_midtrans.payment_acquirer_midtrans" model="payment.acquirer">
+      <field name="name">Midtrans</field>
+      <field name="image_128" type="base64" file="izi_payment_midtrans/static/src/img/midtrans_logo.png"/>
+      <field name="provider">midtrans</field>
+      <field name="company_id" ref="base.main_company"/>
+      <field name="view_template_id" ref="izi_payment_midtrans.midtrans_form"/>
+      <field name="pre_msg"><![CDATA[
+<p>You will be redirected to the Midtrans website after clicking on the payment button.</p>]]></field>
+      <field name="midtrans_method">snap</field>
+      <field name="midtrans_merchant_id">dummy</field>
+      <field name="midtrans_server_key">dummy</field>
+      <field name="midtrans_client_key">dummy</field>
+      <field name="description" type="html">
+        <p>
+          Midtrans (formerly known as Veritrans) is an online payment gateway for Indonesian markets.
+        </p>
+        <p>The service aims to provide services for Card Payment, Bank Transfer, Cardless Credit, Direct Debit,
+          e-Wallet, and Over the Counter.
+        </p>
+        <ul class="list-inline">
+          <li class="list-inline-item"><i class="fa fa-check"/>Online Payment
+          </li>
+          <li class="list-inline-item"><i class="fa fa-check"/>Payment Status Tracking
+          </li>
+        </ul>
+      </field>
+    </record>
+  </data>
+</odoo>

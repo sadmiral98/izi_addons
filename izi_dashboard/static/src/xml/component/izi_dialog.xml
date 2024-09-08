@@ -1,0 +1,6 @@
+<template>
+    <div t-name="IZIDialog" class="izi_dialog">
+        <div class="izi_dialog_bg"></div>
+        <div class="izi_dialog_content"></div>
+    </div>
+</template>

@@ -1,0 +1,34 @@
+<template>
+    <div t-name="IZICurrentDimensionItem" class="izi_current_dimension_item izi_item izi_btn izi_btn_wlb izi_w100 izi_rd8 active" t-att-data-id="id" t-att-data-name="name">
+        <span t-if="field_type != 'date' &amp;&amp; field_type != 'datetime'" class="material-icons-outlined izi_btn_icon_left">
+            <t t-esc="field_icon"/>
+        </span>
+        <!-- Date Format -->
+        <div t-if="field_type == 'date' || field_type == 'datetime'" class="izi_dropdown izi_block_left dropdown izi_inline izi_inherit">
+            <button class="izi_btn izi_m0 izi_py0 izi_pl0 izi_btn_wlp dropdown-toggle izi_inherit izi_no_border" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <t t-esc="field_format"/>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item izi_select_format" data-format="day" t-att-data-dimension="dimension_id">Date</a>
+                <a class="dropdown-item izi_select_format" data-format="week" t-att-data-dimension="dimension_id">Week</a>
+                <a class="dropdown-item izi_select_format" data-format="month" t-att-data-dimension="dimension_id">Month</a>
+                <a class="dropdown-item izi_select_format" data-format="quarter" t-att-data-dimension="dimension_id">Quarter</a>
+                <a class="dropdown-item izi_select_format" data-format="year" t-att-data-dimension="dimension_id">Year</a>
+            </div>
+        </div>
+        <span class="izi_text izi_block_left" t-att-title="name">
+            <t t-esc="name"/>
+        </span>
+        <span t-att-data-id="id" t-att-data-dimension="dimension_id" class="izi_remove_dimension_item material-icons izi_btn_icon_right izi_hover_highlight" t-esc="'highlight_off'"/>
+        <div style="clear:both"/>
+    </div>
+    <div t-name="IZISelectDimensionItem" class="izi_select_dimension_item izi_item izi_btn izi_btn_wlb izi_w100 izi_rd" t-att-data-id="id" t-att-data-name="name">
+        <span class="material-icons-outlined izi_btn_icon_left">
+            <t t-esc="field_icon"/>
+        </span>
+        <span class="izi_text izi_block_left" t-att-title="name">
+            <t t-esc="name"/>
+        </span>
+        <div style="clear:both"/>
+    </div>
+</template>

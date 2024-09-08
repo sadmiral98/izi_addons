@@ -1,0 +1,22 @@
+/* umum */
+.sec_container{
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #F8F9FA;
+}
+
+/* sec-intro */
+.bckg-head {
+    background-color: #0D2D59;
+    border-radius: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 20px;
+}
+
+.img-head{
+    margin-top: -50px;
+    width: 80%;
+    height: 100px;
+}

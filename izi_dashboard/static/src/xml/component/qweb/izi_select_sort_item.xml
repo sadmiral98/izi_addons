@@ -1,0 +1,31 @@
+<template>
+    <div t-name="IZICurrentSortItem" class="izi_current_sort_item izi_item izi_btn izi_btn_wlda izi_w100 izi_rd8 active" t-att-data-id="id" t-att-data-name="name">
+        <span class="material-icons-outlined izi_btn_icon_left">
+            <t t-esc="field_icon"/>
+        </span>
+        <span class="izi_text izi_block_left" t-att-title="name">
+            <t t-esc="name"/>
+        </span>
+        <span t-att-data-sort_id="sort_id" class="izi_remove_sort_item material-icons izi_btn_icon_right izi_hover_highlight" t-esc="'highlight_off'"/>
+        <!-- Sort -->
+        <div t-att-class="'izi_block_right dropdown izi_dropdown izi_sort_'+sort">
+            <div class="dropdown-toggle" id="dropdownSort" data-toggle="dropdown">
+                <span class="material-icons izi_btn_icon_right" t-att-title="sort == 'asc' ? 'Ascending' : 'Descending'" t-esc="'sort'"/>
+            </div>
+            <div class="dropdown-menu" aria-labelledby="dropdownSort">
+                <a class="dropdown-item izi_select_sort_direction" data-sort="asc" t-att-data-sort_id="sort_id">Asc</a>
+                <a class="dropdown-item izi_select_sort_direction" data-sort="desc" t-att-data-sort_id="sort_id">Desc</a>
+            </div>
+        </div>
+        <div style="clear:both"/>
+    </div>
+    <div t-name="IZISelectSortItem" class="izi_select_sort_item izi_item izi_btn izi_btn_wlda izi_w100 izi_rd" t-att-data-id="id" t-att-data-name="name">
+        <span class="material-icons-outlined izi_btn_icon_left">
+            <t t-esc="field_icon"/>
+        </span>
+        <span class="izi_text izi_block_left" t-att-title="name">
+            <t t-esc="name"/>
+        </span>
+        <div style="clear:both"/>
+    </div>
+</template>

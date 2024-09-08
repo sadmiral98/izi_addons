@@ -1,0 +1,10 @@
+.izi_current_filter_item .dropdown-toggle {
+    text-transform: uppercase;
+    font-size: 10px !important;
+    font-weight: 600;
+    line-height: 20px;
+}
+.izi_current_filter .izi_update_current_filter_item {   
+    border-radius: 6px;
+    margin-bottom: 1rem;
+}

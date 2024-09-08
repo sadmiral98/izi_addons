@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="assets_backend" name="izi_dashboard_assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <!-- CSS -->
+
+                <!-- General -->
+               
+                <!-- Component -->
+
+                <!-- JS -->
+                <!-- Library -->
+
+                <!-- Component -->
+                <script type="text/javascript" src="/izi_dashboard_themes_extra/static/src/js/component/chart/amcharts_theme.js"></script>
+
+                <!-- capture / Export Page -->
+                
+                <!-- Base -->
+
+            </xpath>
+        </template>
+    </data>
+</odoo>

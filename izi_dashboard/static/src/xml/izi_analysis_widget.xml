@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates id="template" xml:space="preserve">
+    <t t-name="FieldIZIAnalysis">
+        <div class="izi_dashboard_block_content" 
+            style="max-width: 500px;height: 300px;zoom: 0.8;">
+        
+        </div>
+    </t>
+</templates>

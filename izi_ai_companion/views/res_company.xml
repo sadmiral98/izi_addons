@@ -1,0 +1,26 @@
+<!-- Inherit Res Company Form -->
+<odoo>
+    <data>
+        <record id="ai_companion_view_res_company_form" model="ir.ui.view">
+            <field name="name">ai.companion.res.company.form</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page string="Vector Database">
+                        <group>
+                            <field name="vector_db_name"/>
+                            <field name="vector_db_user"/>
+                            <field name="vector_db_pass" placeholder="Set Empty If no password needed"/>
+                            <field name="vector_db_host"/>
+                            <field name="vector_db_port"/>
+                            <field name="default_threshold"/>
+                            <field name="default_limit"/>
+                            <field name="paragraphs_chunk_limit"/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

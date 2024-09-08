@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <menuitem id="izi_dashboard_menu" parent="izi_data.izi_dashboard_root" name="Dashboard" sequence="10"  action="izi_dashboard_action" />
+        <menuitem id="izi_analysis_menu" parent="izi_data.izi_dashboard_root" name="Analysis" sequence="20"  action="izi_analysis_action" />
+    </data>
+</odoo>

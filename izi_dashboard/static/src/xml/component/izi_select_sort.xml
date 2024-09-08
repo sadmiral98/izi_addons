@@ -1,0 +1,4 @@
+<template>
+    <div t-name="IZISelectSort" class="izi_select_sort">
+    </div>
+</template>

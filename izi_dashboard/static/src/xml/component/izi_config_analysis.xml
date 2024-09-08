@@ -1,0 +1,123 @@
+<template>
+    <div t-name="IZIConfigAnalysis" class="izi_config_analysis">
+        <div class="izi_select_analysis_container flex-only">
+            <div class="izi_select_analysis izi_p20" title="Click to select or create analysis">
+                <div class="izi_title">Select Analysis</div>
+                <div class="izi_subtitle">
+                    Click to select or create analysis
+                </div>
+            </div>
+            <div class="izi_select_analysis_button_container flex-column">
+                <div class="izi_block_left izi_dropdown dropdown">
+                    <span class="material-icons" data-toggle="dropdown" t-esc="'edit'"/>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item izi_select_analysis_edit">Edit Analysis</a>
+                        <a class="dropdown-item izi_action_open_data_script_editor">Data Script Editor</a>
+                        <a class="dropdown-item izi_action_open_visual_script_editor">Visual Script Editor</a>
+                    </div>
+                </div>
+                <span class="material-icons izi_select_analysis_explore" title="Explore Analysis With AI" t-esc="'magic_button'"/>
+            </div>
+        </div>
+        <div class="izi_divider"/>
+
+        <!-- Data / Visual -->
+        <div class="izi_config_analysis_tab">
+            <div class="izi_tab izi_tab_data active">
+                Data
+            </div>
+            <div class="izi_tab izi_tab_visual">
+                Visual
+            </div>
+            <div style="clear:both"/>
+        </div>
+
+        <!-- Data -->
+        <div id="izi_accordion" class="izi_tab_content_data">
+            <div class="card izi_white izi_divider">
+                <div class="card-header izi_white izi_p10_20">
+                    <div class="izi_current_metric"/>
+                    <div class="izi_add_metric izi_btn izi_btn_wpb collapsed" data-toggle="collapse" data-target="#collapseMetric" aria-expanded="false" aria-controls="collapseMetric">
+                        <span class="material-icons izi_btn_icon_left" t-esc="'numbers'"/> Add Metrics
+                    </div>
+                </div>
+                <div id="collapseMetric" class="collapse" data-parent="#izi_accordion">
+                    <div class="card-body izi_white izi_p10_20 izi_pt0">
+                        <div class="izi_select_metric_container"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card izi_white izi_divider">
+                <div class="card-header izi_white izi_p10_20">
+                    <div class="izi_current_dimension"/>
+                    <div class="izi_add_dimension izi_btn izi_btn_wbb collapsed" data-toggle="collapse" data-target="#collapseDimension" aria-expanded="false" aria-controls="collapseDimension">
+                        <span class="material-icons izi_btn_icon_left" t-esc="'show_chart'"/> Add Dimensions
+                    </div>
+                </div>
+                <div id="collapseDimension" class="collapse" data-parent="#izi_accordion">
+                    <div class="card-body izi_white izi_p10_20 izi_pt0">
+                        <div class="izi_select_dimension_container"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card izi_white izi_divider" style="display: none;">
+                <div class="card-header izi_white izi_p10_20">
+                    <div class="izi_current_filter" id="izi_accordion_current_filter"/>
+                    <div class="izi_add_filter izi_btn izi_btn_wctb collapsed" data-toggle="collapse" data-target="#collapseFilter" aria-expanded="false" aria-controls="collapseFilter">
+                        <span class="material-icons izi_btn_icon_left" t-esc="'tune'"/> Add Filters
+                    </div>
+                </div>
+                <div id="collapseFilter" class="collapse" data-parent="#izi_accordion">
+                    <div class="card-body izi_white izi_p10_20 izi_pt0">
+                        <div class="izi_select_filter_container" id="izi_accordion_select_filter"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card izi_white izi_divider">
+                <div class="card-header izi_white izi_p10_20">
+                    <div class="izi_current_sort"/>
+                    <div class="izi_add_sort izi_btn izi_btn_wdab collapsed" data-toggle="collapse" data-target="#collapseSort" aria-expanded="false" aria-controls="collapseSort">
+                        <span class="material-icons izi_btn_icon_left" t-esc="'swap_vert'"/> Add Sort
+                    </div>
+                </div>
+                <div id="collapseSort" class="collapse" data-parent="#izi_accordion">
+                    <div class="card-body izi_white izi_p10_20 izi_pt0">
+                        <div class="izi_select_sort_container"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card izi_white izi_divider izi_change_limit_container" style="display:none;">
+                <div class="card-header izi_white izi_p10_20">
+                    <div class="flex-body">
+                        <label for="izi_change_limit" class="flex-1 col-form-label izi_subtitle">Limit</label>
+                        <div class="input-group flex-1">
+                            <input type="number" class="form-control izi_change_limit" id="izi_change_limit" min="0"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card izi_white izi_divider izi_add_dashboard_container" style="display: none">
+                <div class="card-header izi_white izi_p10_20">
+                    <input type="hidden" class="izi_wfull izi_mb10 izi_select2" id="izi_select2_dashboard"/>
+                    <div class="izi_add_dashboard_block izi_btn izi_btn_wbb">
+                        <span class="material-icons izi_btn_icon_left" t-esc="'add'"/> Add to Dashboard
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Visual -->
+        <div id="izi_accordion" class="izi_tab_content_visual" style="display:none;">
+            <div class="card izi_white izi_divider">
+                <div class="izi_select_visual_container card-body izi_white izi_p10_20 izi_pt0 flex-body">
+                </div>
+                <div class="izi_select_visual_config_container card-body izi_white izi_p10_20 izi_pb0"></div>
+            </div>
+        </div>
+    </div>
+</template>

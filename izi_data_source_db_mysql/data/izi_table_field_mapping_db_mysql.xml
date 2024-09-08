@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data noupdate="0">
+    <record model="izi.table.field.mapping" id="izi_data_source_db_mysql.izi_table_field_mapping_mysql_1">
+      <field name="name">DECIMAL</field>
+      <field name="type_mapping">number</field>
+      <field name="source_type">db_mysql</field>
+    </record>
+    <record model="izi.table.field.mapping" id="izi_data_source_db_mysql.izi_table_field_mapping_mysql_2">
+      <field name="name">INT</field>
+      <field name="type_mapping">number</field>
+      <field name="source_type">db_mysql</field>
+    </record>
+    <record model="izi.table.field.mapping" id="izi_data_source_db_mysql.izi_table_field_mappin_mysql_3">
+      <field name="name">FLOAT</field>
+      <field name="type_mapping">number</field>
+      <field name="source_type">db_mysql</field>
+    </record>
+    <record model="izi.table.field.mapping" id="izi_data_source_db_mysql.izi_table_field_mapping_mysql_4">
+      <field name="name">DOUBLE</field>
+      <field name="type_mapping">number</field>
+      <field name="source_type">db_mysql</field>
+    </record>
+    <record model="izi.table.field.mapping" id="izi_data_source_db_mysql.izi_table_field_mapping_mysql_5">
+      <field name="name">TIMESTAMP</field>
+      <field name="type_mapping">datetime</field>
+      <field name="source_type">db_mysql</field>
+    </record>
+    <record model="izi.table.field.mapping" id="izi_data_source_db_mysql.izi_table_field_mapping_mysql_6">
+      <field name="name">DATE</field>
+      <field name="type_mapping">date</field>
+      <field name="source_type">db_mysql</field>
+    </record>
+    <record model="izi.table.field.mapping" id="izi_data_source_db_mysql.izi_table_field_mapping_mysql_7">
+      <field name="name">TIME</field>
+      <field name="type_mapping">datetime</field>
+      <field name="source_type">db_mysql</field>
+    </record>
+    <record model="izi.table.field.mapping" id="izi_data_source_db_mysql.izi_table_field_mapping_mysql_8">
+      <field name="name">DATETIME</field>
+      <field name="type_mapping">datetime</field>
+      <field name="source_type">db_mysql</field>
+    </record>
+    <record model="izi.table.field.mapping" id="izi_data_source_db_mysql.izi_table_field_mapping_mysql_9">
+      <field name="name">YEAR</field>
+      <field name="type_mapping">number</field>
+      <field name="source_type">db_mysql</field>
+    </record>
+    <record model="izi.table.field.mapping" id="izi_data_source_db_mysql.izi_table_field_mapping_mysql_10">
+      <field name="name">VARCHAR</field>
+      <field name="type_mapping">string</field>
+      <field name="source_type">db_mysql</field>
+    </record>
+    <record model="izi.table.field.mapping" id="izi_data_source_db_mysql.izi_table_field_mapping_mysql_11">
+      <field name="name">BIT</field>
+      <field name="type_mapping">number</field>
+      <field name="source_type">db_mysql</field>
+    </record>
+    <record model="izi.table.field.mapping" id="izi_data_source_db_mysql.izi_table_field_mapping_mysql_12">
+      <field name="name">BLOB</field>
+      <field name="type_mapping">string</field>
+      <field name="source_type">db_mysql</field>
+    </record>
+    <record model="izi.table.field.mapping" id="izi_data_source_db_mysql.izi_table_field_mapping_mysql_13">
+      <field name="name">TINYBLOB</field>
+      <field name="type_mapping">string</field>
+      <field name="source_type">db_mysql</field>
+    </record>
+    <record model="izi.table.field.mapping" id="izi_data_source_db_mysql.izi_table_field_mapping_mysql_14">
+      <field name="name">MEDIUMBLOB</field>
+      <field name="type_mapping">string</field>
+      <field name="source_type">db_mysql</field>
+    </record>
+    <record model="izi.table.field.mapping" id="izi_data_source_db_mysql.izi_table_field_mapping_mysql_15">
+      <field name="name">LONGBLOB</field>
+      <field name="type_mapping">string</field>
+      <field name="source_type">db_mysql</field>
+    </record>
+    <record model="izi.table.field.mapping" id="izi_data_source_db_mysql.izi_table_field_mapping_mysql_16">
+      <field name="name">TINYINT</field>
+      <field name="type_mapping">boolean</field>
+      <field name="source_type">db_mysql</field>
+    </record>
+  </data>
+</odoo>
+
+

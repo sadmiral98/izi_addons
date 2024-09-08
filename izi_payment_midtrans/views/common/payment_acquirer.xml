@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data noupdate="0">
+    <record id="izi_payment_midtrans.form_payment_acquirer" model="ir.ui.view">
+      <field name="name">Payment Acquirer Form View</field>
+      <field name="model">payment.acquirer</field>
+      <field name="inherit_id" ref="payment.acquirer_form"/>
+      <field name="arch" type="xml">
+        <xpath expr='//group[@name="acquirer"]' position='after'>
+          <group attrs="{'invisible': [('provider', '!=', 'midtrans')]}">
+            <field name="midtrans_method"/>
+            <field name="midtrans_merchant_id"/>
+            <field name="midtrans_client_key"/>
+            <field name="midtrans_server_key"/>
+          </group>
+          <group string="SNAP Configuration"
+                 attrs="{'invisible': [('provider', '!=', 'midtrans'), ('midtrans_method', '!=', 'snap')]}">
+            <field name="midtrans_snap_payment_type_ids" string="Payment Channels" widget="many2many_tags"
+                   options="{'no_quick_create': True, 'no_create_edit': True, 'no_open': True}"
+                   attrs="{'invisible': [('midtrans_method', '!=', 'snap')]}"/>
+            <field name="midtrans_redirect"/>
+            <field name="midtrans_snap_custom_expiry"/>
+            <field name="midtrans_snap_expiry_duration"
+                   attrs="{'invisible': [('midtrans_snap_custom_expiry', '=', False)]}"/>
+            <field name="midtrans_snap_expiry_unit"
+                   attrs="{'invisible': [('midtrans_snap_custom_expiry', '=', False)]}"/>
+          </group>
+        </xpath>
+      </field>
+    </record>
+  </data>
+</odoo>

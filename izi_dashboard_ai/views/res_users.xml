@@ -1,0 +1,37 @@
+<!-- Inherit Users Form Add Notebook IZI Lab Subscription -->
+<odoo>
+    <data>
+        <record id="view_res_users_form" model="ir.ui.view">
+            <field name="name">res.users.form</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page string="IZI Lab Subscription" name="izi_lab_subscription">
+                        <group string="API Key">
+                            <group>
+                                <field name="izi_lab_api_key" readonly="1"/>
+                            </group>
+                            <group>
+                                <field name="izi_lab_subscription_expiration_date" readonly="1"/>
+                            </group>
+                        </group>
+                        <group string="Subscription">
+                            <field name="izi_lab_subscription_ids" widget="one2many_list" readonly="1">
+                                <tree string="Subscription">
+                                    <field name="name" invisible="1"/>
+                                    <field name="product_id"/>
+                                    <field name="type"/>
+                                    <field name="status"/>
+                                    <field name="date_start"/>
+                                    <field name="date_end"/>
+                                    <field name="invoice_id"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

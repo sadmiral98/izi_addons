@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record model="ir.actions.act_window" id="izi_dashboard_action">
+            <field name="name">Dashboard</field>
+            <field name="res_model">izi.dashboard</field>
+            <field name="view_mode">izidashboard</field>
+            <field name="context">{}</field>
+        </record>
+        <record model="ir.actions.act_window" id="izi_analysis_action">
+            <field name="name">Analysis</field>
+            <field name="res_model">izi.analysis</field>
+            <field name="view_mode">izianalysis</field>
+            <field name="context">{}</field>
+        </record>
+    </data>
+</odoo>

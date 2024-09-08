@@ -1,0 +1,5 @@
+pandas
+requests
+xlrd==2.0.1
+gspread
+oauth2client

@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_izi_dashboard_ai_izi_lab_subscription,"IZI Lab Subscription Access for Group User",izi_dashboard_ai.model_izi_lab_subscription,base.group_user,1,1,1,1
+
+access_izi_ai_query_master,izi.ai.query.master,model_izi_ai_query_master,,1,1,1,1

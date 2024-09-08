@@ -1,0 +1,4 @@
+<template>
+    <div t-name="IZISelectMetric" class="izi_select_metric">
+    </div>
+</template>

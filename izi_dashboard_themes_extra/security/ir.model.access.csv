@@ -1,0 +1,2 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"izi_dashboard.access_izi_dashboard_theme_crud_group_user","IZI Dashboard Theme Access for Group User: CRUD","izi_dashboard.model_izi_dashboard_theme",,1,1,1,1

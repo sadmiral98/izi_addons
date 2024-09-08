@@ -1,0 +1,50 @@
+<template>
+    <div t-name="IZIViewAnalysis" class="izi_view_analysis">
+        <!-- Explore -->
+        <div class="izi_dialog" style="display:none;">
+            <div class="izi_view_analysis_explore_bg"></div>
+            <div class="izi_view_analysis_explore_header">
+                Explore Analysis With AI
+                <span class="subtitle">These are some generated analysis from AI. Select one or more generated analysis below and then click the button to save it!</span>
+            </div>
+            <div class="izi_view_analysis_explore">
+            </div>
+            <div class="izi_view_analysis_explore_footer">
+                <div class="izi_submit_analysis_explore izi_btn izi_btn_purple collapsed">
+                    <span class="material-icons izi_btn_icon_left" t-esc="'magic_button'"/> Save Analysis
+                </div>
+                <input type="hidden" class="izi_select2" id="izi_select2_dashboard_explore"/>
+            </div>
+        </div>
+        <!-- Analysis -->
+        <div class="izi_dashboard_block_item">
+            <div class="izi_dashboard_block_header flex-row">
+                <h4 style="visibility: hidden;" class="izi_dashboard_block_title flex-1" t-esc="widget.analysis_name"></h4>
+            </div>
+            <div class="izi_dashboard_block_content"></div>
+        </div>
+        <!-- Script Editor -->
+        <div class="izi_dashboard_script_editor" style="left: -1000px;">
+            <img class="izi_dashboard_script_type" src="/izi_dashboard/static/src/img/js.png"/>
+            <h4></h4>
+            <div class="izi_dashboard_script_editor_content" onmousedown="event.preventDefault(); event.stopPropagation();">
+                <div id="izi_script_editor"></div>
+            </div>
+            <div class="izi_dashboard_script_editor_button_container">
+                <div class="izi_toggle_float_script izi_float_button">
+                    <span class="material-icons" t-esc="'open_in_new'"/>
+                </div>
+                <div class="izi_script_ai izi_float_button">
+                    <span class="material-icons" t-esc="'magic_button'"/>
+                </div>
+                <div class="izi_update_script izi_btn izi_btn_purple collapsed">
+                    <span class="material-icons izi_btn_icon_left" t-esc="'code'"/> Update
+                </div>
+                <div class="izi_close_script izi_btn collapsed">
+                    <span class="material-icons izi_btn_icon_left" t-esc="'close'"/> Cancel
+                </div>
+                <div style="clear:both"></div>
+            </div>
+        </div>
+    </div>
+</template>

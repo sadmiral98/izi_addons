@@ -1,0 +1,19 @@
+<template>
+    <div t-name="IZIViewDashboardBlock" class="izi_dashboard_block_item" t-att-data-id="widget.id">
+        <div class="izi_dashboard_block_header">
+            <div class="izi_block_left izi_dropdown dropdown">
+                <h4 class="izi_dashboard_block_title dropdown-toggle" data-toggle="dropdown" t-esc="widget.analysis_name"/>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item izi_action_open_analysis">Open Analysis</a>
+                    <a class="dropdown-item izi_action_quick_open_analysis">Quick Open Analysis</a>
+                    <a class="dropdown-item izi_action_edit_analysis">Edit Analysis</a>
+                    <a class="dropdown-item izi_action_open_list_view">View List</a>
+                    <a class="dropdown-item izi_action_export_excel" t-att-data-id="widget.id">Export Excel</a>
+                    <a class="dropdown-item izi_action_duplicate_block" t-att-data-id="widget.id">Duplicate Analysis</a>
+                    <a class="dropdown-item izi_action_delete_block" t-att-data-id="widget.id">Remove Analysis</a>
+                </div>
+            </div>
+        </div>
+        <div class="izi_dashboard_block_content"></div>
+    </div>
+</template>

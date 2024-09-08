@@ -1,0 +1,90 @@
+.grid-stack-item-content{
+    box-shadow: none;
+    border-radius: 8px;
+    overflow: visible;
+}
+
+.izi_dashboard_block_item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background: white;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+
+.izi_dashboard_block_header{
+    padding: 20px 30px;
+    padding-bottom: 0px;
+}
+.izi_dashboard_block_title{
+    margin-bottom: 0px;
+    font-weight: 400;
+    font-size: 18px;
+    color: black;
+    margin: 0px;
+    cursor: pointer;
+}
+.izi_dashboard_block_btn_config{
+    position: absolute;
+    right: -5px;
+    top:-5px;
+}
+
+.izi_dashboard_block_btn_config .dropdown-menu{
+    left: -100px;
+}
+
+.izi_dashboard_block_content{
+    height: 100%;
+    font-size: 11px !important;
+    overflow: hidden;
+}
+/* Dashboard Grid */
+.izi_view_dashboard_grid .izi_dashboard_block_header{
+    padding: 20px;
+    padding-bottom: 10px;
+    z-index: 1;
+}
+.izi_view_dashboard_grid .izi_dashboard_block_title{
+    margin: 0px;
+    font-family: 'Roboto';
+    font-size: 16px;
+}
+.izi_view_dashboard_grid .izi_view_visual .gridjs-container {
+    font-size: 12px;
+}
+.izi_view_dashboard_grid .izi_view_visual .gridjs-container th.gridjs-th {
+    font-size: 12px;
+    padding: 6px 12px;
+}
+.izi_view_dashboard_grid .izi_view_visual .gridjs-container td.gridjs-td {
+    font-size: 12px;
+    font-weight: 400;
+    padding: 6px 12px;
+}
+.izi_view_dashboard_grid .izi_dashboard_block_title.dropdown-toggle::after {
+    vertical-align: 0.2em;
+    margin-left: 0.6em;
+    font-size: 14px;
+}
+.izi_view_dashboard_grid .izi_analysis_filter_temp {
+    display: none;
+}
+.izi_view_dashboard_grid .izi_analysis_filter_temp.active {
+    display: flex;
+}
+/* Mode */
+.izi_dashboard_block_content.izi_mode_analysis {
+    display: flex;
+    flex-direction: row-reverse;
+}
+.izi_dashboard_block_content.izi_mode_analysis > div{
+    flex: 1;
+}
+.izi_dashboard_block_content.izi_mode_analysis > .izi_dashboard_block_description {
+    padding: 20px 80px;
+    font-size: 14px;
+    font-weight: 300;
+}

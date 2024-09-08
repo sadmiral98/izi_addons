@@ -1,0 +1,37 @@
+<odoo>
+<data noupdate="0">
+    <record model="izi.table" id="example_mssql">
+        <field name="name">Example MsSQL</field>
+        <field name="source_id" search="[('type', '=', 'db_odoo')]"/>
+        <field name="is_stored" eval="True"/>
+        <field name="main_code">
+# Connect to Microsoft SQL Server
+pymssql = izi.lib('pymssql')
+
+# pymssql.connect(server, user, password, "tempdb")
+mydb = pymssql.connect('172.104.32.38', 'izi', 'Iz1pass@2023', "TestDB")
+mycursor = mydb.cursor(as_dict=True)
+mycursor.execute("SELECT id, name, quantity FROM TestDB.dbo.Inventory;")
+myresult = mycursor.fetchall()
+
+res = []
+index = 1
+for r in myresult:
+  r['index'] = index
+  r['active'] = True
+  index += 1
+  res.append(r)
+
+if izi_table and res:
+  # Build Table Schma
+  izi_table.get_table_fields_from_dictionary(res[0])
+  izi_table.update_schema_store_table()
+
+  # Truncate and Insert Values
+  izi.query_execute('TRUNCATE izi_example_mssql;')
+  for r in res:
+    izi.query_insert('izi_example_mssql', r)
+        </field>
+    </record>
+</data>
+</odoo>

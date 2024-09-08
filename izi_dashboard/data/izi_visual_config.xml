@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data noupdate="0">
+    <record id="izi_dashboard.default_izi_lab_url" model="ir.config_parameter">
+        <field name="key">izi_lab_url</field>
+        <!-- <field name="value">http://127.0.0.1:9014</field> -->
+        <field name="value">https://lab.iziapp.id</field>
+    </record>
+    <record model="izi.visual.config" id="izi_dashboard.izi_visual_config_scorecard_style">
+      <field name="name">scorecardStyle</field>
+      <field name="title">Scorecard Style</field>
+      <field name="config_type">selection_string</field>
+      <field name="default_config_value">style_1</field>
+      <field name="visual_type_ids" eval="[(6, 0, [
+        ref('izi_dashboard.izi_visual_type_scrcard_basic'),
+      ])]"></field>
+    </record>
+    <record model="izi.visual.config" id="izi_dashboard.izi_visual_config_scorecard_icon">
+      <field name="name">scorecardIcon</field>
+      <field name="title">Scorecard Icon</field>
+      <field name="config_type">input_string</field>
+      <field name="default_config_value">done</field>
+      <field name="visual_type_ids" eval="[(6, 0, [
+        ref('izi_dashboard.izi_visual_type_scrcard_basic'),
+      ])]"></field>
+    </record>
+    <record model="izi.visual.config" id="izi_dashboard.izi_visual_config_background_color">
+      <field name="name">backgroundColor</field>
+      <field name="title">Background Color</field>
+      <field name="config_type">input_string</field>
+      <field name="default_config_value">#FFFFFF</field>
+      <field name="visual_type_ids" eval="[(6, 0, [
+        ref('izi_dashboard.izi_visual_type_scrcard_basic'),
+      ])]"></field>
+    </record>
+    <record model="izi.visual.config" id="izi_dashboard.izi_visual_config_font_color">
+      <field name="name">fontColor</field>
+      <field name="title">Font Color</field>
+      <field name="config_type">input_string</field>
+      <field name="default_config_value">#000000</field>
+      <field name="visual_type_ids" eval="[(6, 0, [
+        ref('izi_dashboard.izi_visual_type_scrcard_basic'),
+      ])]"></field>
+    </record>
+    <record model="izi.visual.config" id="izi_dashboard.izi_visual_config_border_color">
+      <field name="name">borderColor</field>
+      <field name="title">Border Color</field>
+      <field name="config_type">input_string</field>
+      <field name="default_config_value">#2B9EFF</field>
+      <field name="visual_type_ids" eval="[(6, 0, [
+        ref('izi_dashboard.izi_visual_type_scrcard_basic'),
+      ])]"></field>
+    </record>
+    <record model="izi.visual.config" id="izi_dashboard.izi_visual_config_scorecard_icon_color">
+      <field name="name">scorecardIconColor</field>
+      <field name="title">Scorecard Icon Color</field>
+      <field name="config_type">input_string</field>
+      <field name="default_config_value">#000000</field>
+      <field name="visual_type_ids" eval="[(6, 0, [
+        ref('izi_dashboard.izi_visual_type_scrcard_basic'),
+      ])]"></field>
+    </record>
+    <record model="izi.visual.config" id="izi_dashboard.izi_visual_config_inner_radius">
+      <field name="name">innerRadius</field>
+      <field name="title">Inner Radius</field>
+      <field name="config_type">input_number</field>
+      <field name="default_config_value">30</field>
+      <field name="visual_type_ids" eval="[(6, 0, [
+        ref('izi_dashboard.izi_visual_type_pie'),
+        ref('izi_dashboard.izi_visual_type_radar'),
+        ref('izi_dashboard.izi_visual_type_flower'),
+        ref('izi_dashboard.izi_visual_type_radialBar')
+      ])]"></field>
+    </record>
+    <record model="izi.visual.config" id="izi_dashboard.izi_visual_config_circle_type">
+      <field name="name">circleType</field>
+      <field name="title">Circle Type</field>
+      <field name="config_type">selection_string</field>
+      <field name="default_config_value">full</field>
+      <field name="visual_type_ids" eval="[(6, 0, [
+        ref('izi_dashboard.izi_visual_type_pie'), 
+        ref('izi_dashboard.izi_visual_type_radar'), 
+        ref('izi_dashboard.izi_visual_type_flower'), 
+        ref('izi_dashboard.izi_visual_type_radialBar')
+      ])]"></field>
+    </record>
+    <record model="izi.visual.config" id="izi_dashboard.izi_visual_config_label_series">
+      <field name="name">labelSeries</field>
+      <field name="title">Label Series</field>
+      <field name="config_type">toggle</field>
+      <field name="default_config_value">false</field>
+      <field name="visual_type_ids" eval="[(6, 0, [
+        ref('izi_dashboard.izi_visual_type_pie')
+      ])]"></field>
+    </record>
+    <record model="izi.visual.config" id="izi_dashboard.izi_visual_config_rotate_label">
+      <field name="name">rotateLabel</field>
+      <field name="title">Auto Rotate Label</field>
+      <field name="config_type">toggle</field>
+      <field name="default_config_value">true</field>
+      <field name="visual_type_ids" eval="[(6, 0, [
+        ref('izi_dashboard.izi_visual_type_bar'),
+        ref('izi_dashboard.izi_visual_type_bullet_bar'), 
+        ref('izi_dashboard.izi_visual_type_bar_line'), 
+        ref('izi_dashboard.izi_visual_type_line')
+      ])]"></field>
+    </record>
+    <record model="izi.visual.config" id="izi_dashboard.izi_visual_config_scrollbar">
+      <field name="name">scrollBar</field>
+      <field name="title">Scroll Bar</field>
+      <field name="config_type">toggle</field>
+      <field name="default_config_value">false</field>
+      <field name="visual_type_ids" eval="[(6, 0, [
+        ref('izi_dashboard.izi_visual_type_bar'),
+        ref('izi_dashboard.izi_visual_type_bullet_bar'), 
+        ref('izi_dashboard.izi_visual_type_bar_line'), 
+        ref('izi_dashboard.izi_visual_type_line')
+      ])]"></field>
+    </record>
+    <record model="izi.visual.config" id="izi_dashboard.izi_visual_config_legend_position">
+      <field name="name">legendPosition</field>
+      <field name="title">Legend Position</field>
+      <field name="config_type">selection_string</field>
+      <field name="default_config_value">right</field>
+      <field name="visual_type_ids" eval="[(6, 0, [
+        ref('izi_dashboard.izi_visual_type_bar'), 
+        ref('izi_dashboard.izi_visual_type_row'), 
+        ref('izi_dashboard.izi_visual_type_bullet_bar'), 
+        ref('izi_dashboard.izi_visual_type_bullet_row'), 
+        ref('izi_dashboard.izi_visual_type_row_line'), 
+        ref('izi_dashboard.izi_visual_type_bar_line'), 
+        ref('izi_dashboard.izi_visual_type_pie'), 
+        ref('izi_dashboard.izi_visual_type_radar'), 
+        ref('izi_dashboard.izi_visual_type_flower'), 
+        ref('izi_dashboard.izi_visual_type_radialBar'), 
+        ref('izi_dashboard.izi_visual_type_line')
+      ])]"></field>
+    </record>
+    <record model="izi.visual.config" id="izi_dashboard.izi_visual_config_legend_heatmap">
+      <field name="name">legendHeatmap</field>
+      <field name="title">Legend</field>
+      <field name="config_type">toggle</field>
+      <field name="default_config_value">true</field>
+      <field name="visual_type_ids" eval="[(6, 0, [
+        ref('izi_dashboard.izi_visual_type_heatmap_geo')
+      ])]"></field>
+    </record>
+    <record model="izi.visual.config" id="izi_dashboard.izi_visual_config_area">
+      <field name="name">area</field>
+      <field name="title">Area</field>
+      <field name="config_type">toggle</field>
+      <field name="default_config_value">false</field>
+      <field name="visual_type_ids" eval="[(6, 0, [
+        ref('izi_dashboard.izi_visual_type_line'),
+        ref('izi_dashboard.izi_visual_type_radar')
+      ])]"></field>
+    </record>
+    <record model="izi.visual.config" id="izi_dashboard.izi_visual_config_stacked">
+      <field name="name">stacked</field>
+      <field name="title">Stacked</field>
+      <field name="config_type">toggle</field>
+      <field name="default_config_value">true</field>
+      <field name="visual_type_ids" eval="[(6, 0, [
+        ref('izi_dashboard.izi_visual_type_bar'), 
+        ref('izi_dashboard.izi_visual_type_row'), 
+        ref('izi_dashboard.izi_visual_type_line'),
+        ref('izi_dashboard.izi_visual_type_row_line'), 
+        ref('izi_dashboard.izi_visual_type_bar_line'),
+        ref('izi_dashboard.izi_visual_type_radar'),
+        ref('izi_dashboard.izi_visual_type_flower'),
+        ref('izi_dashboard.izi_visual_type_radialBar')
+      ])]"></field>
+    </record>
+    <!-- <record model="izi.visual.config" id="izi_dashboard.izi_visual_config_trends">
+      <field name="name">trends</field>
+      <field name="title">Trends</field>
+      <field name="config_type">toggle</field>
+      <field name="default_config_value">false</field>
+      <field name="visual_type_ids" eval="[(6, 0, [
+        ref('izi_dashboard.izi_visual_type_scrcard_basic')
+      ])]"></field>
+    </record> -->
+    <record model="izi.visual.config" id="izi_dashboard.izi_visual_config_trendLine">
+      <field name="name">trendLine</field>
+      <field name="title">Trend Line</field>
+      <field name="config_type">toggle</field>
+      <field name="default_config_value">false</field>
+      <field name="visual_type_ids" eval="[(6, 0, [
+        ref('izi_dashboard.izi_visual_type_scatter')
+      ])]"></field>
+    </record>
+    <record model="izi.visual.config" id="izi_dashboard.izi_visual_config_currency_code">
+      <field name="name">currency_code</field>
+      <field name="title">Currency Code (e.g 'USD')</field>
+      <field name="config_type">input_string</field>
+      <field name="default_config_value"></field>
+      <field name="visual_type_ids" eval="[(6, 0, [
+        ref('izi_dashboard.izi_visual_type_scrcard_basic'),
+        ref('izi_dashboard.izi_visual_type_scrcard_trend'),
+        ref('izi_dashboard.izi_visual_type_scrcard_progress')
+      ])]"></field>
+    </record>
+    <record model="izi.visual.config" id="izi_dashboard.izi_visual_config_particle">
+      <field name="name">particle</field>
+      <field name="title">Particle (e.g 'Units')</field>
+      <field name="config_type">input_string</field>
+      <field name="default_config_value"></field>
+      <field name="visual_type_ids" eval="[(6, 0, [
+        ref('izi_dashboard.izi_visual_type_scrcard_basic'),
+        ref('izi_dashboard.izi_visual_type_scrcard_trend'),
+        ref('izi_dashboard.izi_visual_type_scrcard_progress')
+      ])]"></field>
+    </record>
+    <record model="izi.visual.config" id="izi_dashboard.izi_visual_config_map_view">
+      <field name="name">mapView</field>
+      <field name="title">Map View</field>
+      <field name="config_type">selection_string</field>
+      <field name="default_config_value">ALL</field>
+      <field name="visual_type_ids" eval="[(6, 0, [
+        ref('izi_dashboard.izi_visual_type_heatmap_geo')
+      ])]"></field>
+    </record>
+    <record model="izi.visual.config" id="izi_dashboard.izi_visual_config_iframe_html_tag">
+      <field name="name">iframeHTMLTag</field>
+      <field name="title">HTML Tag</field>
+      <field name="config_type">input_string</field>
+      <field name="default_config_value"></field>
+      <field name="visual_type_ids" eval="[(6, 0, [
+        ref('izi_dashboard.izi_visual_type_iframe')
+      ])]"></field>
+    </record>
+    <record model="izi.visual.config" id="izi_dashboard.izi_visual_config_iframe_url">
+      <field name="name">iframeURL</field>
+      <field name="title">URL</field>
+      <field name="config_type">input_string</field>
+      <field name="default_config_value"></field>
+      <field name="visual_type_ids" eval="[(6, 0, [
+        ref('izi_dashboard.izi_visual_type_iframe')
+      ])]"></field>
+    </record>
+  </data>
+</odoo>
+
+

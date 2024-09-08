@@ -1,0 +1,6 @@
+<template>
+    <div t-name="IZIViewDashboard" class="izi_view_dashboard">
+        <div class="izi_view_dashboard_grid grid-stack">
+        </div>
+    </div>
+</template>

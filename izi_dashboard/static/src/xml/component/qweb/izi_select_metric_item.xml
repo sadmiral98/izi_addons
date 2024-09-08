@@ -1,0 +1,26 @@
+<template>
+    <div t-name="IZICurrentMetricItem" class="izi_current_metric_item izi_item izi_btn izi_btn_wlp izi_w100 izi_rd8 active" t-att-data-id="id" t-att-data-name="name">
+        <div class="izi_dropdown izi_block_left dropdown izi_inline izi_inherit">
+            <button class="izi_btn izi_m0 izi_py0 izi_pl0 izi_btn_wlp dropdown-toggle izi_inherit izi_no_border" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <t t-esc="calculation"/>
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item izi_select_calculation" data-calculation="sum" t-att-data-metric="metric_id">Sum</a>
+                <a class="dropdown-item izi_select_calculation" data-calculation="avg" t-att-data-metric="metric_id">Avg</a>
+                <a class="dropdown-item izi_select_calculation" data-calculation="count" t-att-data-metric="metric_id">Count</a>
+            </div>
+        </div>
+        <span class="izi_text izi_block_left" t-att-title="name">
+            <t t-esc="name"/>
+        </span>
+        <span t-att-data-id="id" t-att-data-metric="metric_id" class="izi_remove_metric_item material-icons izi_btn_icon_right izi_hover_highlight" t-esc="'highlight_off'"/>
+        <div style="clear:both"/>
+    </div>
+    <div t-name="IZISelectMetricItem" class="izi_select_metric_item izi_item izi_btn izi_btn_wlp izi_w100 izi_rd" t-att-data-id="id" t-att-data-name="name">
+        <span class="material-icons izi_btn_icon_left" t-esc="'123'"/>
+        <span class="izi_text izi_block_left" t-att-title="name">
+            <t t-esc="name"/>
+        </span>
+        <div style="clear:both"/>
+    </div>
+</template>

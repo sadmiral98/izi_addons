@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Start Block Group: 1. DB Odoo Sales Template -->
+        <record model="izi.table" id="izi_data_template_sale_izi_table_db_odoo_sales_template_1">
+            <field name="name">Sales Table Template</field>
+            <field name="source_id" search="[('type', '=', 'db_odoo')]"/>
+            <field name="db_query">
+                select
+                    date_trunc('day', so.date_order) date_order,
+                    rp.id customer_id,
+                    rp."name" customer_name,
+                    ct.id sales_team_id,
+                    ct."name" sales_team_name,
+                    rc.id company_id,
+                    rc."name" company_name,
+                    pp.id product_id,
+                    pp.default_code product_sku,
+                    pt."name" product_name,
+                    pc.id product_category_id,
+                    pc."name" product_category_name,
+                    rp2.id salesman_id,
+                    rp2."name" salesman_name,
+                    sum(sol.price_unit) price_unit,
+                    sum(sol.product_uom_qty) sales_qty,
+                    sum(sol.price_subtotal) sales_untaxed,
+                    sum(sol.price_tax) sales_tax,
+                    sum(sol.price_total) sales_taxed
+                from
+                    sale_order so
+                join sale_order_line sol on
+                    (so.id = sol.order_id)
+                join res_partner rp on
+                    (so.partner_id = rp.id)
+                join crm_team ct on
+                    (so.team_id = ct.id)
+                join res_company rc on
+                    (so.company_id = rc.id)
+                join product_product pp on
+                    (sol.product_id = pp.id)
+                join product_template pt on
+                    (pp.product_tmpl_id = pt.id)
+                join product_category pc on
+                    (pt.categ_id = pc.id)
+                join res_partner rp2 on 
+                    (sol.salesman_id = rp2.id)
+                where 
+                    so.state in ('sale', 'done', 'paid')
+                group by 
+                    date_trunc('day', so.date_order),
+                    rp.id,
+                    rp."name",
+                    ct.id,
+                    ct."name",
+                    rc.id,
+                    rc."name",
+                    pp.id,
+                    pp.default_code,
+                    pt."name",
+                    pc.id,
+                    pc."name",
+                    rp2.id,
+                    rp2."name"
+                order by
+                    date_trunc('day', so.date_order),
+                    rp.id,
+                    rp."name",
+                    ct.id,
+                    ct."name",
+                    rc.id,
+                    rc."name",
+                    pp.id,
+                    pp.default_code,
+                    pt."name",
+                    pc.id,
+                    pc."name",
+                    rp2.id,
+                    rp2."name"
+            </field>
+        </record>
+
+        <function model="izi.table" name="get_table_fields" eval="[ref('izi_data_template_sale_izi_table_db_odoo_sales_template_1')]">
+        </function>
+
+        <!-- Start Analysis Sales Template: 1. Anaylsis Daily Sales -->
+        <record model="izi.analysis" id="izi_data_template_sale_izi_analysis_db_odoo_daily_sales">
+            <field name="name">Analysis Daily Sales</field>
+            <field name="method">table_view</field>
+            <field name="source_id" search="[('type', '=', 'db_odoo')]"/>
+            <field name='table_id' ref='izi_data_template_sale_izi_table_db_odoo_sales_template_1'/>
+            <field name="visual_type_id" ref='izi_dashboard.izi_visual_type_line'/>
+        </record>
+
+        <record model="izi.analysis.metric" id="izi_data_template_sale_izi_analysis_metric_db_odoo_daily_sales">
+            <field name="analysis_id" ref='izi_data_template_sale_izi_analysis_db_odoo_daily_sales'/>
+            <field name="field_id" search="[('table_id', '=', ref('izi_data_template_sale_izi_table_db_odoo_sales_template_1')), ('field_name', '=', 'sales_untaxed')]"/>
+        </record>
+
+        <record model="izi.analysis.dimension" id="izi_data_template_sale_izi_analysis_dimension_db_odoo_daily_sales">
+            <field name="analysis_id" ref='izi_data_template_sale_izi_analysis_db_odoo_daily_sales'/>
+            <field name="field_id" search="[('table_id', '=', ref('izi_data_template_sale_izi_table_db_odoo_sales_template_1')), ('field_name','=', 'date_order')]"/>
+            <field name="field_format">day</field>
+            <field name="sort">asc</field>
+        </record>
+        <!-- End Analysis Sales Template: 1. Anaylsis Daily Sales -->
+
+        <!-- Start Analysis Sales Template: 2. Anaylsis Top Product -->
+        <record model="izi.analysis" id="izi_data_template_sale_izi_analysis_db_odoo_top_product">
+            <field name="name">Analysis Top Product</field>
+            <field name="method">table_view</field>
+            <field name="source_id" search="[('type', '=', 'db_odoo')]"/>
+            <field name='table_id' ref='izi_data_template_sale_izi_table_db_odoo_sales_template_1'/>
+            <field name="visual_type_id" ref='izi_dashboard.izi_visual_type_pie'/>
+        </record>
+
+        <record model="izi.analysis.metric" id="izi_data_template_sale_izi_analysis_metric_db_odoo_top_product">
+            <field name="analysis_id" ref='izi_data_template_sale_izi_analysis_db_odoo_top_product'/>
+            <field name="field_id" search="[('table_id', '=', ref('izi_data_template_sale_izi_table_db_odoo_sales_template_1')), ('field_name', '=', 'sales_untaxed')]"/>
+            <field name="sort">desc</field>
+        </record>
+
+        <record model="izi.analysis.dimension" id="izi_data_template_sale_izi_analysis_dimension_db_odoo_top_product">
+            <field name="analysis_id" ref='izi_data_template_sale_izi_analysis_db_odoo_top_product'/>
+            <field name="field_id" search="[('table_id', '=', ref('izi_data_template_sale_izi_table_db_odoo_sales_template_1')), ('field_name','=', 'product_name')]"/>
+        </record>
+        <!-- Start Analysis Sales Template: 2. Anaylsis Top Product -->
+
+        <!-- Start Analysis Sales Template: 3. Anaylsis Top Customer -->
+        <record model="izi.analysis" id="izi_data_template_sale_izi_analysis_db_odoo_top_customer">
+            <field name="name">Analysis Top Customer</field>
+            <field name="method">table_view</field>
+            <field name="source_id" search="[('type', '=', 'db_odoo')]"/>
+            <field name='table_id' ref='izi_data_template_sale_izi_table_db_odoo_sales_template_1'/>
+            <field name="visual_type_id" ref='izi_dashboard.izi_visual_type_bar'/>
+        </record>
+
+        <record model="izi.analysis.metric" id="izi_data_template_sale_izi_analysis_metric_db_odoo_top_customer">
+            <field name="analysis_id" ref='izi_data_template_sale_izi_analysis_db_odoo_top_customer'/>
+            <field name="field_id" search="[('table_id', '=', ref('izi_data_template_sale_izi_table_db_odoo_sales_template_1')), ('field_name', '=', 'sales_untaxed')]"/>
+            <field name="sort">desc</field>
+        </record>
+
+        <record model="izi.analysis.dimension" id="izi_data_template_sale_izi_analysis_dimension_db_odoo_top_customer">
+            <field name="analysis_id" ref='izi_data_template_sale_izi_analysis_db_odoo_top_customer'/>
+            <field name="field_id" search="[('table_id', '=', ref('izi_data_template_sale_izi_table_db_odoo_sales_template_1')), ('field_name','=', 'customer_name')]"/>
+        </record>
+        <!-- Start Analysis Sales Template: 3. Anaylsis Top Customer -->
+
+        <!-- Start Analysis Sales Template: 4. Anaylsis Top Category Product -->
+        <record model="izi.analysis" id="izi_data_template_sale_izi_analysis_db_odoo_top_category_product">
+            <field name="name">Analysis Top Category Product</field>
+            <field name="method">table_view</field>
+            <field name="source_id" search="[('type', '=', 'db_odoo')]"/>
+            <field name='table_id' ref='izi_data_template_sale_izi_table_db_odoo_sales_template_1'/>
+        </record>
+
+        <record model="izi.analysis.metric" id="izi_data_template_sale_izi_analysis_metric_db_odoo_top_category_product">
+            <field name="analysis_id" ref='izi_data_template_sale_izi_analysis_db_odoo_top_category_product'/>
+            <field name="field_id" search="[('table_id', '=', ref('izi_data_template_sale_izi_table_db_odoo_sales_template_1')), ('field_name', '=', 'sales_untaxed')]"/>
+            <field name="sort">desc</field>
+        </record>
+
+        <record model="izi.analysis.dimension" id="izi_data_template_sale_izi_analysis_dimension_db_odoo_top_category_product">
+            <field name="analysis_id" ref='izi_data_template_sale_izi_analysis_db_odoo_top_category_product'/>
+            <field name="field_id" search="[('table_id', '=', ref('izi_data_template_sale_izi_table_db_odoo_sales_template_1')), ('field_name','=', 'product_category_name')]"/>
+        </record>
+        <!-- Start Analysis Sales Template: 4. Anaylsis Top Category Product -->
+
+        <!-- Start Analysis Sales Template: 5. Anaylsis Top Sales Team -->
+        <record model="izi.analysis" id="izi_data_template_sale_izi_analysis_db_odoo_top_sales_team">
+            <field name="name">Analysis Top Sales Team</field>
+            <field name="method">table_view</field>
+            <field name="source_id" search="[('type', '=', 'db_odoo')]"/>
+            <field name='table_id' ref='izi_data_template_sale_izi_table_db_odoo_sales_template_1'/>
+            <field name="visual_type_id" ref='izi_dashboard.izi_visual_type_pie'/>
+        </record>
+
+        <record model="izi.analysis.metric" id="izi_data_template_sale_izi_analysis_metric_db_odoo_top_sales_team">
+            <field name="analysis_id" ref='izi_data_template_sale_izi_analysis_db_odoo_top_sales_team'/>
+            <field name="field_id" search="[('table_id', '=', ref('izi_data_template_sale_izi_table_db_odoo_sales_template_1')), ('field_name', '=', 'sales_untaxed')]"/>
+            <field name="sort">desc</field>
+        </record>
+
+        <record model="izi.analysis.dimension" id="izi_data_template_sale_izi_analysis_dimension_db_odoo_top_sales_team">
+            <field name="analysis_id" ref='izi_data_template_sale_izi_analysis_db_odoo_top_sales_team'/>
+            <field name="field_id" search="[('table_id', '=', ref('izi_data_template_sale_izi_table_db_odoo_sales_template_1')), ('field_name','=', 'sales_team_name')]"/>
+        </record>
+        <!-- Start Analysis Sales Template: 5. Anaylsis Top Sales Team -->
+
+        <!-- Start Analysis Sales Template: 6. Anaylsis Top Salesman -->
+        <record model="izi.analysis" id="izi_data_template_sale_izi_analysis_db_odoo_top_salesman">
+            <field name="name">Analysis Top Salesman</field>
+            <field name="method">table_view</field>
+            <field name="source_id" search="[('type', '=', 'db_odoo')]"/>
+            <field name='table_id' ref='izi_data_template_sale_izi_table_db_odoo_sales_template_1'/>
+            <field name="visual_type_id" ref='izi_dashboard.izi_visual_type_row'/>
+        </record>
+
+        <record model="izi.analysis.metric" id="izi_data_template_sale_izi_analysis_metric_db_odoo_top_salesman">
+            <field name="analysis_id" ref='izi_data_template_sale_izi_analysis_db_odoo_top_salesman'/>
+            <field name="field_id" search="[('table_id', '=', ref('izi_data_template_sale_izi_table_db_odoo_sales_template_1')), ('field_name', '=', 'sales_untaxed')]"/>
+            <field name="sort">desc</field>
+        </record>
+
+        <record model="izi.analysis.dimension" id="izi_data_template_sale_izi_analysis_dimension_db_odoo_top_salesman">
+            <field name="analysis_id" ref='izi_data_template_sale_izi_analysis_db_odoo_top_salesman'/>
+            <field name="field_id" search="[('table_id', '=', ref('izi_data_template_sale_izi_table_db_odoo_sales_template_1')), ('field_name','=', 'salesman_name')]"/>
+        </record>
+        <!-- Start Analysis Sales Template: 6. Anaylsis Top Salesman -->
+
+        <!-- Start Analysis Sales Template: 7. Anaylsis Top Product SKU -->
+        <record model="izi.analysis" id="izi_data_template_sale_izi_analysis_db_odoo_top_product_sku">
+            <field name="name">Analysis Top Product SKU</field>
+            <field name="method">table_view</field>
+            <field name="source_id" search="[('type', '=', 'db_odoo')]"/>
+            <field name='table_id' ref='izi_data_template_sale_izi_table_db_odoo_sales_template_1'/>
+        </record>
+
+        <record model="izi.analysis.metric" id="izi_data_template_sale_izi_analysis_metric_db_odoo_top_product_sku">
+            <field name="analysis_id" ref='izi_data_template_sale_izi_analysis_db_odoo_top_product_sku'/>
+            <field name="field_id" search="[('table_id', '=', ref('izi_data_template_sale_izi_table_db_odoo_sales_template_1')), ('field_name', '=', 'sales_untaxed')]"/>
+            <field name="sort">desc</field>
+        </record>
+
+        <record model="izi.analysis.dimension" id="izi_data_template_sale_izi_analysis_dimension_db_odoo_top_product_sku">
+            <field name="analysis_id" ref='izi_data_template_sale_izi_analysis_db_odoo_top_product_sku'/>
+            <field name="field_id" search="[('table_id', '=', ref('izi_data_template_sale_izi_table_db_odoo_sales_template_1')), ('field_name','=', 'product_sku')]"/>
+        </record>
+        <!-- Start Analysis Sales Template: 7. Anaylsis Top Product SKU -->
+
+        <!-- End Block Group: 1. DB Odoo Sales Template -->
+    </data>
+</odoo>

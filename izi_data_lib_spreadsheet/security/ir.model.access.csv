@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_izi_data_lib_spreadsheet_izi_data_lib_spreadsheet,izi_data_lib_spreadsheet.izi_data_lib_spreadsheet,model_izi_data_lib_spreadsheet_izi_data_lib_spreadsheet,base.group_user,1,1,1,1

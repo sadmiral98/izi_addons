@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="portal_my_home_lab" name="Show API Key" customize_show="True" inherit_id="portal.portal_my_home" priority="20">
+        <xpath expr="//div[hasclass('o_portal_docs')]/*[1]" position="before">
+            <span
+                style="cursor:pointer;
+                    height: 100px;"
+                onclick="copyToClipboard()" 
+                class="list-group-item list-group-item-action d-flex align-items-center justify-content-between" title="IZI Lab API Key">
+                <span>API Key</span>
+                <input disabled="1" 
+                    style="font-weight: bold;
+                    border-radius: 4px;
+                    padding: 2px 8px;
+                    border: 1px solid #EEE;
+                    width: 60%;
+                    text-align: right;"
+                id="apiKey" t-att-value="izi_lab_api_key"/>
+                <span style="font-size: 10px;
+                    background: #06c;
+                    color: white;
+                    padding: 2px 12px;
+                    border-radius: 2px;
+                    font-weight: 500;
+                    font-family: 'Source Sans Pro';
+                    position: absolute;
+                    right: 20px;
+                    bottom: 10px;
+                    letter-spacing: 1px;
+                    text-transform: uppercase;">
+                    Premium Access Until
+                    <t t-esc="izi_lab_subscription_expiration_date"/>
+                    </span>
+            </span>
+            <script>
+            async function copyToClipboard() {
+                // Get the text field
+                var copyText = document.getElementById("apiKey");
+
+                // Select the text field
+                copyText.focus();
+                copyText.select();
+                copyText.setSelectionRange(0, 99999); // For mobile devices
+
+                // Copy the text inside the text field
+                if (copyText.value) {
+                    await navigator.clipboard.writeText(copyText.value);
+                    alert("Copied the API Key");
+                }
+            }
+            </script>
+        </xpath>
+    </template>
+</odoo>

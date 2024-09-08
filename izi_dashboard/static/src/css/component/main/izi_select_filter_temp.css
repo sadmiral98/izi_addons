@@ -1,0 +1,108 @@
+/* Filter */
+.izi_analysis_filter_temp_container {
+    display: block;
+    float: right;
+}
+.izi_analysis_filter_temp{
+    float: right;
+    display: flex;
+    border-radius: 6px;
+    margin-left: 10px;
+}
+.izi_analysis_filter_temp_container .izi_analysis_filter_temp_title {
+    font-weight: 600;
+    font-size: 13px;
+    height: 32px;
+    line-height: 30px;
+    background: #875A7B;
+    border: 1px solid #875A7B;
+    display: block;
+    color: white;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    margin-top: 0px;
+    cursor: pointer;
+}
+.izi_analysis_filter_temp .izi_input {
+    border: none;
+    width: 100px;
+    padding: 0px;
+    font-weight: 300;
+    color: #875A7B;
+}
+.izi_analysis_filter_temp .izi_input::placeholder {
+    color: #444;
+    font-weight: 300;
+}
+.izi_analysis_filter_temp .izi_select2 .select2-choices {
+    border: none;
+}
+.izi_analysis_filter_temp .izi_select2.select2-container-multi .select2-choices .select2-search-field input {
+    margin-left: 10px;
+}
+.izi_analysis_filter_temp .o_datepicker {
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.izi_analysis_filter_temp_content .izi_dropdown {
+    height: 30px;
+    line-height: 30px;
+    margin: 0px 10px;
+}
+.izi_analysis_filter_temp_title.izi_dropdown {
+    margin: 0px;
+}
+.izi_analysis_filter_temp .izi_dropdown button {
+    font-weight: 300;
+    background: none;
+    outline: none;
+    color: #875A7B;
+    font-size: 13px;
+}
+.izi_analysis_filter_temp .izi_dropdown .dropdown-toggle::after {
+    vertical-align: 0.1em;
+}
+.izi_analysis_filter_temp span.material-icons-outlined {
+    line-height: 30px;
+    font-size: 16px;
+    padding: 0px 8px;
+}
+.izi_analysis_filter_temp .izi_analysis_filter_temp_title .dropdown-toggle::after {
+    display: none;
+}
+.izi_analysis_filter_temp .dropdown-item {
+    cursor: pointer;
+    height: 32px;
+    line-height: 22px;
+}
+.izi_analysis_filter_temp .izi_analysis_filter_temp_title .dropdown-item.active {
+    background: #875A7B;
+    color: white;
+}
+.izi_analysis_filter_temp {
+    opacity: 0.2;
+}
+.izi_analysis_filter_temp:hover,
+.izi_analysis_filter_temp.active {
+    opacity: 1;
+}
+.izi_analysis_filter_temp_content {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    height: 32px;
+    overflow: hidden;
+    width: 0px;
+    border: none;
+}
+.izi_analysis_filter_temp.active .izi_analysis_filter_temp_title {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+.izi_analysis_filter_temp.active .izi_analysis_filter_temp_content{
+    overflow: visible;
+    width: auto;
+    border: 1px solid #875A7B;
+}

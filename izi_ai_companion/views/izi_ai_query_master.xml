@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="izi_ai_query_master_view_form" model="ir.ui.view">
+			<field name="name">izi.ai.query.master.view.form</field>
+			<field name="model">izi.ai.query.master</field>
+			<field name="arch" type="xml">
+				<form string="">
+					<sheet>
+						<div class="oe_button_box" name="button_box">
+							<button name="update_default_prompt" type="object" class="oe_stat_button" icon="fa-exclamation-triangle">
+								<span>Update Default Prompt</span>
+							</button>
+							<button name="get_response" type="object" class="oe_stat_button" icon="fa-question">
+								<span>Get Response</span>
+							</button>
+							<button name="store_embedding" type="object" class="oe_stat_button" icon="fa-sign-in">
+								<span>Store Embedding</span>
+							</button>
+						</div>
+						<group>
+							<field name="query"/>
+							<field name="query_type"/>
+							<field name="description"/>
+							<field name="instructional_prompt"/>
+							<field name="response" widget="ace"/>
+							<field name="version"/>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>	
+		<record id="izi_ai_query_master_view_tree" model="ir.ui.view">
+			<field name="name">izi.ai.query.master.view.tree</field>
+			<field name="model">izi.ai.query.master</field>
+			<field name="arch" type="xml">
+				<tree string="">
+					<field name="query"/>
+					<field name="query_type"/>
+					<field name="description"/>
+				</tree>
+			</field>
+		</record>
+
+		<record id="izi_ai_query_master_search" model="ir.ui.view">
+			<field name="name">Query Master Search</field>
+			<field name="model">izi.ai.query.master</field>
+			<field name="arch" type="xml">
+				<search string="Search">
+					<field name="query" string="Query"
+						filter_domain="[
+							'|', '|', '|', '|', 
+							('query', 'ilike', self), ('query_type', 'ilike', self), ('description', 'ilike', self),
+							('instructional_prompt', 'ilike', self), ('response', 'ilike', self)]"/>
+				</search>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="izi_query_master_action">
+            <field name="name">Query Master</field>
+            <field name="res_model">izi.ai.query.master</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+		<menuitem id="izi_query_master_root" web_icon="izi_dashboard,static/description/icon.png" name="Query Master" sequence="-1" action="izi_query_master_action"/>
+	</data>
+</odoo>

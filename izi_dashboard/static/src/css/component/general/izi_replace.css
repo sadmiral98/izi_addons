@@ -1,0 +1,183 @@
+.datepicker .table-sm > tbody > tr > td.active, .datepicker .table-sm > tbody > tr > td .active {
+    background-color: #875A7B;
+    border-radius: 4px;
+}
+.bootstrap-datetimepicker-widget table td.active, .bootstrap-datetimepicker-widget table td.active:hover {
+    background-color: #875A7B;
+}
+.bootstrap-datetimepicker-widget table td span.active {
+    background-color: #875A7B;
+}
+/* Datepicker */
+.izi_view .o_datepicker .o_datepicker_button {
+    height: 30px;
+    line-height: 30px;
+} 
+
+/* Scroll */
+/* width or height */
+.gridjs-wrapper::-webkit-scrollbar,
+.ace_scrollbar-h::-webkit-scrollbar {
+    height: 5px;
+}
+.ace_scrollbar-v::-webkit-scrollbar {
+    width: 5px;
+}
+.o_content::-webkit-scrollbar,
+.select2-results::-webkit-scrollbar,
+.grid-stack-item-content::-webkit-scrollbar,
+.izi_config_analysis::-webkit-scrollbar,
+.izi_dialog_content::-webkit-scrollbar,
+.dropdown-menu::-webkit-scrollbar,
+.gridjs-container::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+.o_content::-webkit-scrollbar-track,
+.gridjs-wrapper::-webkit-scrollbar-track,
+.select2-results::-webkit-scrollbar-track,
+.grid-stack-item-content::-webkit-scrollbar-track,
+.ace_scrollbar-h::-webkit-scrollbar-track,
+.ace_scrollbar-v::-webkit-scrollbar-track,
+.izi_config_analysis::-webkit-scrollbar-track,
+.izi_dialog_content::-webkit-scrollbar-track,
+.dropdown-menu::-webkit-scrollbar-track,
+.gridjs-container::-webkit-scrollbar-track  {
+    background: #f1f1f1; 
+}
+
+/* Handle */
+.o_content::-webkit-scrollbar-thumb,
+.gridjs-wrapper::-webkit-scrollbar-thumb,
+.select2-results::-webkit-scrollbar-thumb,
+.grid-stack-item-content::-webkit-scrollbar-thumb,
+.ace_scrollbar-h::-webkit-scrollbar-thumb,
+.ace_scrollbar-v::-webkit-scrollbar-thumb,
+.izi_config_analysis::-webkit-scrollbar-thumb,
+.izi_dialog_content::-webkit-scrollbar-thumb,
+.dropdown-menu::-webkit-scrollbar-thumb,
+.gridjs-container::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+/* Handle on hover */
+.o_content::-webkit-scrollbar-thumb:hover,
+.gridjs-wrapper::-webkit-scrollbar-thumb:hover,
+.select2-results::-webkit-scrollbar-thumb:hover,
+.grid-stack-item-content::-webkit-scrollbar-thumb:hover,
+.ace_scrollbar-h::-webkit-scrollbar-thumb:hover,
+.ace_scrollbar-v::-webkit-scrollbar-thumb:hover,
+.izi_config_analysis::-webkit-scrollbar-thumb:hover,
+.izi_dialog_content::-webkit-scrollbar-thumb:hover,
+.dropdown-menu::-webkit-scrollbar-thumb:hover,
+.gridjs-container::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+.swal2-actions button {
+    padding: 8px 28px;
+}
+.swal2-actions button.swal2-confirm.swal2-styled {
+    background: #875A7B;
+}
+.swal2-actions button.swal2-styled.swal2-cancel {
+    background: #AAA;
+}
+div#swal2-html-container {
+    /* text-align: justify; */
+    font-size: 14px;
+    font-weight: 300;
+}
+.swal2-popup.swal2-modal.swal2-show {
+    width: 42em;
+    padding-bottom: 2em;
+}
+h2#swal2-title {
+    padding-top: 0px;
+}
+.modal.o_technical_modal .modal-content {
+    border-radius: 6px;
+}
+.izi_replace_footer button.btn {
+    border-radius: 4px;
+    padding: 6px 12px;
+    font-size: 12px;
+}
+/* Material Icon Picker */
+.material-icon-picker {
+    position: fixed;
+    top: 50%;
+    margin-top: -200px;
+    left: 50%;
+    margin-left: -300px;
+    z-index: 10;
+    border-radius: 6px;
+    padding: 0px;
+    background: white;
+    width: 600px;
+    padding: 10px;
+    overflow: hidden;
+}
+.material-icon-picker > input {
+    font-size: 14px;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #AAA;
+}
+.material-icon-picker:focus {
+    outline: none;
+}
+.material-icon-picker-prefix {
+    padding: 4px;
+    padding-right: 12px;
+}
+.material-icon-picker .icons {
+    max-width: 600px;
+    max-height: 400px;
+    overflow: scroll;
+    text-align: center;
+}
+div.material-icon-picker input[type="text"] {
+    width: 100%;
+}
+.material-icon-picker .material-icons {
+    font-size: 30px;
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 10px;
+    margin: 3px;
+    transition: .2s;
+    width: 50px;
+}
+.material-icon-picker .material-icons:hover {
+    background: #ececec;
+}
+
+/* Scorecard */
+.scorecard-style_2 {
+    flex-direction: row-reverse !important;
+}
+.scorecard-style_2 .scorecard-img-container {
+    margin-right: 10% !important;
+}
+.scorecard-style_3 {
+    flex-direction: column-reverse !important;
+    padding: 10px !important;
+}
+.scorecard-style_3 > .flex-column{
+    flex: 1;
+}
+.scorecard-style_3 .scorecard-img-container i.material-icons {
+    font-size: 20px !important;
+}
+.scorecard-style_3 .scorecard-title {
+    font-size: 15px;
+}
+.scorecard-style_3.scorecard > .flex-column{
+    align-items: center;
+}
+.scorecard-style_3 .scorecard-img-container {
+    flex: 1;
+    align-items: center;
+    display: flex;
+}

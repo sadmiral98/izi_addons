@@ -1,0 +1,112 @@
+<template>
+    <div t-name="IZISelectAnalysis" class="izi_dialog">
+        <div class="izi_dialog_bg"></div>
+        <div class="izi_dialog_content">
+            <div class="izi_dialog_header">
+                <div class="izi_search_analysis_container" style="flex:1">
+                    <div class="izi_search_analysis_category dropdown izi_dropdown" style="flex : 1;" title="Filter By Category">
+                        <span class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="material-icons" t-esc="'manage_search'"/>
+                            <span class="title">Category</span>
+                        </span>
+                        <div class="dropdown-menu">
+                        </div>
+                    </div>
+                    <div class="izi_search_analysis_visual dropdown izi_dropdown" style="flex : 1;" title="Filter By Visual Type">
+                        <span class="dropdown-toggle" data-toggle="dropdown">
+                            <span class="material-icons" t-esc="'query_stats'"/>
+                            <span class="title">Visual Type</span>
+                        </span>
+                        <div class="dropdown-menu">
+                        </div>
+                    </div>
+                    <div class="izi-input-group" style="flex : 4;">
+                        <span class="izi-input-group-pretend material-icons-outlined" t-esc="'search'"/>
+                        <input class="izi-input-text izi_search_analysis_name" placeholder="Search Analysis Name.."/>
+                    </div>
+                    <!-- <input class="izi_search_analysis_name" placeholder="Search Analysis Name"/> -->
+                </div>
+                <!-- <button type="button" id="izi_dialog_close_btn" class="close" data-dismiss="modal" aria-label="Close">
+                    <span class="material-icons-outlined">close</span>
+                </button> -->
+            </div>
+            <div class="izi_select_analysis_item_container izi_dialog_body"/>
+            <div style="clear:both;"/>
+            <!-- Form -->
+            <div class="izi_form_analysis_container" style="display:none;">
+                <div class="izi_form_header">
+                    <div class="izi_form_header_title izi_input_analysis">
+                        <span class="material-icons" t-esc="'bar_chart'"/>
+                        <span class="izi_title"><input class="izi_input" placeholder="Analysis"/></span>
+                    </div>
+                    <!-- Buttons -->
+                    <div class="izi_block_right izi_inline_button izi_action_analysis_save">
+                        <span class="material-icons izi_btn_icon_left" t-esc="'done'"/>
+                        Save
+                    </div>
+                    <div class="izi_block_right izi_inline_button izi_action_analysis_close neutral">
+                        <span class="material-icons izi_btn_icon_left" t-esc="'undo'"/>
+                        Back
+                    </div>
+                    <div class="izi_block_right izi_inline_button izi_action_analysis_delete neutral">
+                        <span class="material-icons izi_btn_icon_left" t-esc="'close'"/>
+                        Delete
+                    </div>
+                    <div style="clear:both;"/>
+                </div>
+                <div class="izi_form_header izi_select_data_source">
+                    <div class="izi_form_header_title">
+                        <span class="material-icons" t-esc="'cloud'"/>
+                        <input type="hidden" class="izi_w200 izi_block_left izi_select2" id="izi_select2_data_source"/>
+                        <input type="hidden" class="izi_w200 izi_block_left izi_select2" id="izi_select2_table"/>
+                        <input style="display:none;" class="izi_block_left izi_input izi_input_table" placeholder="New Table"/>
+                        <div style="display:none;" class="izi_block_left izi_inline_button izi_action_table_edit neutral">
+                            <span class="material-icons izi_btn_icon_left" t-esc="'edit'"/>
+                            Edit Table
+                        </div>
+                        <div style="display:none;" class="izi_block_left izi_inline_button izi_action_table_new">
+                            <span class="material-icons izi_btn_icon_left" t-esc="'add'"/>
+                            New Table
+                        </div>
+                        <div style="display:none;" class="izi_block_left izi_inline_button izi_action_table_save">
+                            <span class="material-icons izi_btn_icon_left" t-esc="'done'"/>
+                            Save Table
+                        </div>
+                        <div style="display:none;" class="izi_block_left izi_inline_button izi_action_table_cancel warning">
+                            <span class="material-icons izi_btn_icon_left" t-esc="'close'"/>
+                            Cancel
+                        </div>
+                    </div>
+                    <!-- Buttons -->
+                    <span style="display:none;" class="material-icons izi_action_table_search" title="Activate Other Tables">search</span>
+                    <div style="clear:both;"/>
+                    <div class="izi_form_header_select izi_select_data_source_item_container" style="display:none;">
+                    </div>
+                </div>
+                <div class="izi_form_header izi_form_table_fields">
+                    <div class="izi_form_header_title">
+                        <span class="material-icons" t-esc="'text_fields'"/>
+                        <span class="izi_title">Fields</span>
+                    </div>
+                    <div style="clear:both;"/>
+                    <div class="izi_form_header_select izi_select_field_metric_item_container">
+                    </div>
+                    <div class="izi_form_header_select izi_select_field_dimension_item_container">
+                    </div>
+                    <div style="clear:both;"/>
+                </div>
+                <div class="izi_form_header izi_form_table_query">
+                    <div class="izi_form_header_title">
+                        <span class="material-icons" t-esc="'join_full'"/>
+                        <span class="izi_title">SQL Query</span>
+                    </div>
+                    <span class="material-icons izi_action_table_execute_query" title="Execute Query and Build Schema" t-esc="'done'"/>
+                    <span class="material-icons izi_action_table_test_query" title="Test Query" t-esc="'bug_report'"/>
+                    <!-- <span class="material-icons" title="Duplicate Query to a New Table">content_copy</span> -->
+                    <div style="clear:both;"/>
+                    <div id="izi_query_editor"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,35 @@
+.izi_view_table_container {
+    background: #FFF;
+    box-sizing: border-box;
+    width: 100%;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+.izi_view_table {
+    display: flex;
+}
+.izi_view_table_grid {
+    padding: 40px;
+    margin: auto;
+    min-width: 60%;
+}
+.gridjs-wrapper {
+    border-radius: 4px 4px 0 0;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 5%), 0 1px 2px 0 rgb(0 0 0 / 5%);
+}
+.gridjs-footer {
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 5%), 0 1px 2px 0 rgb(0 0 0 / 5%);
+}
+th.gridjs-th {
+    font-size: 13px;
+    line-height: 24px;
+}
+.gridjs-search {
+    width: 50%;
+    max-width: 200px;
+}
+.gridjs-search input {
+    padding: 5px 10px;
+    width: 100%;
+}

@@ -1,0 +1,5 @@
+<template>
+    <div t-name="IZIViewTable" class="izi_view_table">
+        <div class="izi_view_table_grid"></div>
+    </div>
+</template>

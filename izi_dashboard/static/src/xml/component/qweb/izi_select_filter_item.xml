@@ -1,0 +1,99 @@
+<template>
+    <div t-name="IZICurrentFilterItem" t-att-id="'izi_accordion_current_filter_'+id">
+        <div class="izi_current_filter_item izi_item izi_btn izi_btn_wlct izi_w100 izi_rd8 active" data-toggle="collapse" t-att-data-target="'#collapseCurrentFilter_'+id" aria-expanded="false" t-att-aria-controls="'collapseCurrentFilter_'+id">
+            <span class="material-icons-outlined izi_btn_icon_left">
+                <t t-esc="field_icon"/>
+            </span>
+            <span class="izi_text izi_block_left" t-att-title="name">
+                <t t-esc="name"/>
+            </span>
+            <span t-att-data-filter_id="filter_id" class="izi_remove_filter_item material-icons izi_btn_icon_right izi_hover_highlight" t-esc="'highlight_off'"/>
+        </div>
+        <div t-att-id="'collapseCurrentFilter_'+id" class="collapse izi_item izi_w100 izi_rd" data-parent="#izi_accordion_current_filter">
+            <form t-att-id="'current_form_filter_'+id">
+                <div class="form-group">
+                    <select class="form-control" t-att-id="'current_condition_'+id">
+                        <option value="" disabled="disabled">Choose operator</option>
+                        <option t-if="condition == 'and'" value="or" selected="selected">AND</option>
+                        <option t-else="" value="and">AND</option>
+                        <option t-if="condition == 'or'" value="or" selected="selected">OR</option>
+                        <option t-else="" value="or">OR</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" t-att-id="'current_field_'+name" t-att-value="name" readonly="readonly"/>
+                </div>
+                <!-- <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" t-att-id="'openBracket_'+id"/>
+                        <label class="form-check-label" t-att-for="'openBracket_'+id">Open Bracket</label>
+                    </div> -->
+                <div class="form-group">
+                    <select class="form-control" t-att-id="'current_operator_'+id">
+                        <option value="" disabled="disabled">Choose operator</option>
+                        <t t-foreach="filter_operators" t-as="operator">
+                            <option t-if="current_operator_id == operator.operator_id" t-att-value="operator.operator_id" selected="selected">
+                                <t t-esc="operator.operator_name"/> 
+                            </option>
+                            <option t-else="" t-att-value="operator.operator_id">
+                                <t t-esc="operator.operator_name"/>
+                            </option>
+                        </t>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" t-att-id="'current_value_'+id" t-att-value="value" required="required" placeholder="Value"/>
+                </div>
+                <!-- <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" t-att-id="'closeBracket_'+id"/>
+                        <label class="form-check-label" t-att-for="'closeBracket_'+id">Close Bracket</label>
+                    </div> -->
+                <button type="button" class="btn btn-primary izi_update_current_filter_item izi_item izi_btn izi_btn_wctb izi_w100 izi_rd" t-att-data-id="id" t-att-data-filter_id="filter_id">Update</button>
+            </form>
+        </div>
+        <div style="clear:both"/>
+    </div>
+    <div t-name="IZISelectFilterItem" t-att-id="'izi_accordion_select_filter_'+id">
+        <div class="izi_item izi_btn izi_btn_wlct izi_w100 izi_rd" data-toggle="collapse" t-att-data-target="'#collapseSelectFilter_'+id" aria-expanded="false" t-att-aria-controls="'collapseSelectFilter_'+id">
+            <span class="material-icons-outlined izi_btn_icon_left">
+                <t t-esc="field_icon"/>
+            </span>
+            <span class="izi_text izi_block_left" t-att-title="name">
+                <t t-esc="name"/>
+            </span>
+        </div>
+        <div t-att-id="'collapseSelectFilter_'+id" class="collapse izi_item izi_w100 izi_rd6 izi_p10" data-parent="#izi_accordion_select_filter">
+            <form t-att-id="'select_form_filter_'+id">
+                <div class="form-group">
+                    <select class="form-control" t-att-id="'select_condition_'+id">
+                        <option value="" disabled="disabled" selected="selected">Choose operator</option>
+                        <option value="and">AND</option>
+                        <option value="or">OR</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" t-att-id="'select_field_'+name" t-att-value="name" readonly="readonly"/>
+                </div>
+                <div class="form-group">
+                    <select class="form-control" t-att-id="'select_operator_'+id">
+                        <option value="" disabled="disabled" selected="selected">Choose operator</option>
+                        <t t-foreach="filter_operators" t-as="operator">
+                            <option t-att-value="operator.operator_id">
+                                <t t-esc="operator.operator_name"/>
+                            </option>
+                        </t>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" t-att-id="'select_value_'+id" required="required" placeholder="Value"/>
+                </div>
+                
+                <div class="izi_select_filter_item izi_btn izi_btn_wctb izi_wfull izi_align_center">
+                    <div class="izi_display_inline_block">
+                        <span class="material-icons izi_btn_icon_left" t-esc="'save'"/> Save Filter
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div style="clear:both"/>
+    </div>
+</template>

@@ -1,0 +1,251 @@
+.izi_config_dashboard {
+    background: white;
+    box-sizing: border-box;
+}
+.izi_select_dashboard {
+    cursor: pointer;
+}
+.izi_config_dashboard_button_container {
+}
+.izi_config_dashboard_button_container .izi_btn{
+    margin-left: 6px;
+    font-size: 13px;
+    line-height: 22px;
+    font-weight: 300;
+    font-family: 'Roboto-Light';
+}
+.izi_select_dashboard .izi_edit_dashboard_button,
+.izi_select_dashboard .izi_save_dashboard_button {
+    font-size: 22px;
+    height: 30px;
+    line-height: 30px;
+    margin-left: 8px;
+}
+.izi_select_dashboard .izi_title .izi_input {
+    color: black;
+    font-weight: 600;
+    font-size: 18px;
+    background: transparent;
+}
+.izi_dashboard_filter {
+    min-width: 150px;
+    height: 33px;
+    line-height: 33px;
+    color: #875A7B;
+    border: 1px solid #875A7B;
+    border-radius: 6px;
+    margin-left: 6px;
+    display: flex;
+}
+.izi_dashboard_filter .izi_select2 .select2-choices,
+.izi_dashboard_filter .izi_select2 .select2-choice{
+    border: none !important;
+    color: #875A7B;
+}
+.izi_dashboard_filter .izi_select2 .select2-choices {
+    display: flex;
+}
+.izi_dashboard_filter .izi_select2 .select2-default {
+    color: #875A7B !important;
+    margin-left: 10px !important;
+    padding-left: 0px !important;
+}
+.izi_dashboard_filter .izi_select2 .select2-default .select2-chosen {
+    color: #875A7B !important;
+}
+.izi_dashboard_filter .select2-container .select2-choice .select2-arrow {
+    display: none;
+}
+.izi_dashboard_filter .izi_select2.select2-container-multi .select2-choices .select2-search-field input {
+    max-width: 100px;
+}
+.izi_dashboard_filter .izi_select2 .select2-search-choice {
+    width: 75px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.izi_dashboard_filter .izi_select2 .select2-search-choice > div{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.izi_dashboard_filter_title {
+    float: left;
+    width: auto;
+    height: 32px;
+}
+.izi_dashboard_filter_title span{
+    height: 32px;
+    line-height: 32px;
+    padding-left: 8px;
+    padding-right: 8px;
+    background: #875A7B;
+    font-size: 18px;
+    margin-left: -2px;
+    color: white;
+    border-bottom-left-radius: 6px;
+    border-top-left-radius: 6px;
+}
+.izi_dashboard_filter_content {
+    float: left;
+    min-width: 150px;
+    height: 32px;
+}
+.izi_dashboard_filter_content .izi_dropdown {
+    width: 100%;
+}
+.izi_dashboard_filter_content .dropdown-toggle {
+    height: 32px;
+    line-height: 32px;
+    width: 100%;
+    display: block;
+    text-align: left;
+    padding-left: 10px;
+    background: none;
+    font-weight: 300;
+    font-size: 13px;
+    color: #875A7B;
+}
+.izi_dashboard_filter_content .dropdown-toggle:focus {
+    outline: none;
+}
+.izi_dashboard_filter_content .dropdown-toggle::after {
+    display: none;
+}
+.izi_dashboard_filter_content a.dropdown-item.izi_select_date_format {
+    height: 28px;
+    line-height: 28px;
+    box-sizing: content-box;
+    width: auto;
+}
+.izi_dashboard_filter#izi_dashboard_filter_date_range {
+    width: 300px;
+}
+.izi_dashboard_filter#izi_dashboard_filter_date_range .izi_dashboard_filter_content {
+    width: 260px;
+}
+.izi_dashboard_filter#izi_dashboard_filter_date_range .izi_dashboard_filter_content .o_datepicker{
+    float: left;
+    width: 50%;
+    padding-left: 10px;
+}
+.izi_dashboard_filter#izi_dashboard_filter_date_range .izi_dashboard_filter_content .o_datepicker input{
+    border: 0px;
+    height: 32px;
+    line-height: 32px;
+    background: none;
+    font-size: 13px;
+}
+.izi_dashboard_filter#izi_dashboard_filter_date_range .izi_dashboard_filter_content .o_datepicker input::placeholder{
+    font-weight: 300;
+    font-size: 13px;
+    color: #875A7B;
+}
+#izi_dashboard_ai_search_input {
+    width: 400px;
+    padding: 0px 10px;
+    border: none;
+    height: 32px;
+    box-sizing: border-box;
+    background: none;
+    font-weight: 300;
+    font-size: 13px;
+    color: #875A7B;
+    line-height: 32px;
+}
+#izi_dynamic_filter_container {
+    display: flex;
+}
+.izi_dashboard_filter#izi_dashboard_search_container {
+    min-width: 550px;
+}
+.izi_dashboard_filter#izi_dashboard_search_container .izi_dashboard_filter_content {
+    min-width: 500px;
+}
+.izi_dashboard_filter#izi_dashboard_search_container .izi_select2.select2-container-multi .select2-choices .select2-search-field input {
+    max-width: 500px;
+}
+.izi_dashboard_filter#izi_dashboard_search_container .izi_select2 .select2-search-choice {
+    width: auto;
+}
+.izi_dashboard_option {
+    display: flex;
+    margin: -6px -16px;
+    padding: 6px 16px;
+    padding-bottom: 12px;
+    padding-top: 8px;
+    border-bottom: 1px solid #EEE;
+}
+.izi_dashboard_option .izi_dashboard_option_header{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.izi_dashboard_option .izi_dashboard_option_visual{
+    width: 0px;
+    text-align: right;
+}
+.izi_dashboard_option .izi_dashboard_option_category {
+    margin: 0px;
+}
+.izi_dashboard_option .izi_dashboard_option_category span {
+    float: left;
+    font-size: 8px;
+    background: #EEE;
+    padding: 2px 10px;
+    margin: 0px;
+    border-radius: 4px;
+    color: #888;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-right: 6px;
+    letter-spacing: 0.5px;
+    margin-top: 4px;
+}
+.izi_dashboard_option .izi_dashboard_option_category span.material-icons,
+.izi_dashboard_option .izi_dashboard_option_category span.material-icons-outlined
+ {
+    font-size: 13px;
+    color: #AAA;
+    background: none;
+    padding: 2px 0px;
+    margin: 0px;
+    margin-right: 6px;
+    margin-top: 2px;
+    text-transform: none;
+}
+.izi_dashboard_option .izi_dashboard_option_visual span.material-icons,
+.izi_dashboard_option .izi_dashboard_option_visual span.material-icons-outlined {
+    font-size: 13px;
+    color: #AAA;
+}
+.izi_dashboard_option .izi_dashboard_option_category span.izi_dashboard_option_premium {
+    background: #06c;
+    color: white;
+}
+@media only screen and (max-width: 792px) {
+    .izi_config_dashboard_button_container {
+        display: none !important;
+    }
+    .izi_dialog_content {
+        width: 80% !important;
+        left: 10% !important;
+    }
+    .izi_dialog_content .izi_select_item {
+        width: 100% !important;
+        margin: 5px 0% !important;
+    }
+    .izi_view.izi_flex {
+        display: block !important;
+    }
+    .izi_config_analysis {
+        width: 100% !important;
+        padding: 0px !important;
+    }
+    .izi_view_analysis {
+        width: 100% !important;
+        padding: 0px !important;
+        padding-top: 10px !important;
+    }
+}

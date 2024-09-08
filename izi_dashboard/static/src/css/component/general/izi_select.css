@@ -1,0 +1,116 @@
+.izi_select2 {
+    min-width: 100px;
+}
+.izi_select2 .select2-default .select2-chosen {
+    color: #DDD;
+    line-height: 28px;
+    font-weight: 300;
+}
+
+.izi_select2 .select2-chosen {
+    font-size: 13px;
+    font-weight: 300;
+    display: inline-block;
+}
+.izi_select2 .select2-choice {
+    font-size: 13px;
+    font-weight: 300;
+    background: white;
+    border: none;
+    border: 1px solid #ced4da;
+    height: 30px;
+    line-height: 30px;
+    outline: none;
+    border-radius: 6px;
+    text-align: left;
+    margin-top: 1px;
+    margin-right: 0px;
+    padding-left: 8px;
+    margin-bottom: 0px;
+}
+.izi_select2.select2-container-multi.select2-container-active .select2-choices {
+    border: none;
+    border-bottom: 1px solid #DDD;
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.select2-results .select2-highlighted {
+    background: #FAFAFA;
+    color: #444;
+}
+.select2-results li {
+    font-family: 'Roboto';
+    font-weight: 300;
+    font-size: 13px;
+    padding: 4px 4px;
+    padding-bottom: 2px;
+    letter-spacing: 0.2px;
+}
+.izi_select2.select2-container-multi .select2-choices .select2-search-choice {
+    background: #FFF;
+    border: 1px solid #875A7B;
+    color: #875A7B;
+    font-weight: 300;
+    height: 24px;
+    padding: 4px 4px 4px 18px;
+    margin: 2px 0 2px 5px;
+    border-radius: 6px;
+}
+.izi_select2.select2-container-multi .select2-search-choice-close {
+    opacity: 0.2;
+}
+.izi_select2 .select2-choices {
+    background: white;
+    font-size: 13px;
+    font-weight: 300;
+    border: none;
+    border: 1px solid #ced4da;
+    color: #444;
+    height: 28px !important;
+    line-height: 28px;
+    min-height: 28px;
+    outline: none;
+    text-align: left;
+    padding-top: 0px;
+    padding-bottom: 2px;
+    border-radius: 6px;
+    margin-top: 1px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+}
+.izi_select2.select2-container-multi .select2-choices .select2-search-field {
+    width: 100%;
+}
+.izi_select2.select2-container-multi .select2-choices .select2-search-field input {
+    text-align: left;
+    font-family: 'Roboto';
+    height: 28px;
+    line-height: 28px;
+    padding: 0px;
+    color: #444;
+    margin: 0px;
+    margin-left: 5px;
+    max-width: 50px;
+}
+.izi_select2 .select2-default {
+    min-width: 50px;
+    font-weight: 300;
+    color: #875A7B;
+}
+.izi_select2.select2-container .select2-choice  .select2-arrow {
+    background: none !important;
+    border: none !important;
+}
+.izi_select2.select2-container .select2-choice abbr {
+    display: none;
+}
+.izi_select2.select2-container-active .select2-choice, 
+.izi_select2.select2-container-active .select2-choices {
+    outline: none;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+}
+.select2-results {
+    max-height: 400px;
+}

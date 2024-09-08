@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data noupdate="0">
+    <template id="izi_payment_midtrans.midtrans_form">
+      <input type="hidden" name="data_set" t-att-data-action-url="tx_url" data-remove-me=""/>
+      <input type="hidden" name="order_id" t-att-value="order_id"/>
+      <input type="hidden" name="reference" t-att-value="reference"/>
+      <input type="hidden" name="gross_amount" t-att-value="amount"/>
+      <input type="hidden" name="partner_first_name" t-att-value="partner_first_name"/>
+      <input type="hidden" name="partner_last_name" t-att-value="partner_last_name"/>
+      <input type="hidden" name="partner_email" t-att-value="partner_email"/>
+      <input type="hidden" name="partner_phone" t-att-value="partner_phone"/>
+      <input type="hidden" name="billing_partner_first_name" t-att-value="billing_partner_first_name"/>
+      <input type="hidden" name="billing_partner_last_name" t-att-value="billing_partner_last_name"/>
+      <input type="hidden" name="billing_partner_email" t-att-value="billing_partner_email"/>
+      <input type="hidden" name="billing_partner_phone" t-att-value="billing_partner_phone"/>
+      <input type="hidden" name="billing_partner_address" t-att-value="billing_partner_address"/>
+      <input type="hidden" name="billing_partner_city" t-att-value="billing_partner_city"/>
+      <input type="hidden" name="billing_partner_postal_code" t-att-value="billing_partner_zip"/>
+      <!--<input type="hidden" name="billing_partner_country_code" t-att-value="billing_partner_country.code"/>-->
+      <input type="hidden" name="callback_url" t-att-value="callback_url"/>
+      <input id="acquirer_midtrans" type='hidden' name="acquirer_id" t-att-value="acquirer.id"/>
+      <input id="acquirer_midtrans_state" type="hidden" name="acquirer_midtrans_state"
+             t-att-value="acquirer.state" data-remove-me=""/>
+      <input id="acquirer_midtrans_client_key" type="hidden" name="acquirer_midtrans_client_key"
+             t-att-value="acquirer.midtrans_client_key" data-remove-me=""/>
+      <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+      <script type="text/javascript">
+        odoo.define(function (require) {
+
+          const processPayment = require('izi_payment_midtrans.midtrans');
+
+          let acquirer_state = $('#acquirer_midtrans_state').val();
+          let acquirer_client_key = $('#acquirer_midtrans_client_key').val();
+          let snap_url = "https://app.sandbox.midtrans.com/snap/snap.js";
+          if (acquirer_state == 'enabled') {
+            snap_url = "https://app.midtrans.com/snap/snap.js";
+          }
+          let snap_js = document.createElement('script');
+          snap_js.src = snap_url;
+          snap_js.setAttribute('data-client-key', acquirer_client_key);
+          document.body.appendChild(snap_js);
+          processPayment();
+        });
+      </script>
+    </template>
+  </data>
+</odoo>

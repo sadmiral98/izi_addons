@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data noupdate="0">
+    <record id="izi_payment_midtrans.form_payment_transaction" model="ir.ui.view">
+      <field name="name">Payment Transaction Form View</field>
+      <field name="model">payment.transaction</field>
+      <field name="inherit_id" ref="payment.transaction_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//header/*" position="before">
+          <button name="midtrans_s2s_update_transaction_status" type="object" string="Update Transaction Status"
+                  class="oe_highlight"/>
+        </xpath>
+        <xpath expr="//sheet" position="inside">
+          <group>
+            <group name="midtrans" string="Midtrans Properties" attrs="{'invisible': [('provider', '!=', 'midtrans')]}">
+              <field name="midtrans_snap_token"/>
+              <field name="midtrans_payment_type"/>
+              <field name="midtrans_transaction_status"/>
+              <field name="midtrans_fraud_status"/>
+              <field name="midtrans_channel_response_message" string="Channel Response"/>
+              <field name="midtrans_currency" string="Currency"/>
+            </group>
+            <group>
+              <field name="midtrans_response"/>
+            </group>
+          </group>
+        </xpath>
+      </field>
+    </record>
+  </data>
+</odoo>

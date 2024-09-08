@@ -1,0 +1,4 @@
+<template>
+    <div t-name="IZITemplate" class="izi_template">
+    </div>
+</template>

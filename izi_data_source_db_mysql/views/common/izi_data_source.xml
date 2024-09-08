@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="izi_data_source_db_mysql.izi_data_source_form">
+            <field name="name">izi.data.source.form</field>
+            <field name="model">izi.data.source</field>
+            <field name="inherit_id" ref="izi_data.izi_data_source_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[2]" position="inside">
+                    <group attrs="{'invisible': [('type', '!=', 'db_mysql')]}">
+                        <field name="db_mysql_host"/>
+                        <field name="db_mysql_port"/>
+                        <field name="db_mysql_name"/>
+                        <field name="db_mysql_schema"/>
+                        <field name="db_mysql_user"/>
+                        <field name="db_mysql_password" password="1"/>
+                        <field name="db_mysql_timeout"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

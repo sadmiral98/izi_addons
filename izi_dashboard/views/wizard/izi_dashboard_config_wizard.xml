@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+    <record id="izi_dashboard_config_wizard" model="ir.ui.view">
+      <field name="name">izi.dashboard.config.wizard</field>
+      <field name="model">izi.dashboard.config.wizard</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <field name="dashboard_id"/>
+              <field name="code_file" filename="code_filename"/>
+              <field name="code_filename" invisible="1"/>
+              <field name="code" widget="ace" options="{'mode': 'python'}"/>
+            </group>
+          </sheet>
+          <footer>
+            <button name="process_wizard"
+              string="Process"
+              type="object"
+              class="oe_highlight"
+              />
+            or
+            <button string="Cancel" class="oe_link" special="cancel"/>
+          </footer>
+        </form>
+      </field>
+    </record>
+
+    <!-- Action Window -->
+    <record id="action_izi_dashboard_config_wizard" model="ir.actions.act_window">
+      <field name="name">Dashboard Config Wizard</field>
+      <field name="res_model">izi.dashboard.config.wizard</field>
+      <field name="view_mode">form</field>
+      <field name="target">new</field>
+    </record>
+
+    <!-- Menu -->
+    <!-- <menuitem id="menu_izi_dashboard_config_wizard"
+      name="Config"
+      parent="izi_data.izi_dashboard_root"
+      action="action_izi_dashboard_config_wizard"
+      sequence="1"
+      /> -->
+  </data>
+</odoo>

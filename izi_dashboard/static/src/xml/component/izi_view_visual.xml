@@ -1,0 +1,4 @@
+<template>
+    <div t-name="IZIViewVisual" class="izi_view_visual h-100">
+    </div>
+</template>

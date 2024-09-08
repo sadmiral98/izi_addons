@@ -1,0 +1,44 @@
+/* Visual Config */
+.izi_visual_config {
+    border: none;
+    border-bottom: 1px solid #666;
+    outline: none;
+    padding: 2px;
+}
+.izi_sort_false {
+    opacity: 0.2;
+}
+.izi_sort_false:hover {
+    opacity: 1;
+}
+.izi_sort_asc,
+.izi_sort_desc {
+    opacity: 1;
+}
+.izi_sort_false .material-icons,
+.izi_sort_asc .material-icons{
+    -webkit-transform: scaleY(-1);
+    transform: scaleY(-1);
+}
+.izi_sort_false .dropdown-toggle::after {
+    display: none;
+}
+.izi_config_analysis_tab {
+    margin-bottom: 10px;
+}
+.izi_tab {
+    display: block;
+    float: left;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    background: #FAFAFA;
+    color: #AAA;
+}
+.izi_tab.active {
+    background: white;
+    color: #444;
+}

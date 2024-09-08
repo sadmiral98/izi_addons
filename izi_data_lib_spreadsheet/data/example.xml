@@ -1,0 +1,32 @@
+<odoo>
+<data noupdate="0">
+    <record model="izi.table" id="example_spreadsheet">
+        <field name="name">Example Spreadsheet</field>
+        <field name="source_id" search="[('type', '=', 'db_odoo')]"/>
+        <field name="is_stored" eval="True"/>
+        <field name="main_code">
+# Read Attachment, Spreadsheet File, Google Sheet
+source_data = izi.read_google_spreadsheet('1lSg6YBgK4blyrTUIfoNSJ608q96R8u7ymSt_6mrptro','Sheet1')
+res = []
+for sd in source_data:
+  dt = {
+    'source': sd['source'],
+    'sessions': sd['sessions'],
+    'bounce_rate': sd['bounce_rate'],
+    'new_sessions': sd['new_sessions'],
+  }
+  res.append(dt)
+
+if izi_table and res:
+  # Build Table Schma
+  izi_table.get_table_fields_from_dictionary(res[0])
+  izi_table.update_schema_store_table()
+
+  # Truncate and Insert Values
+  izi.query_execute('TRUNCATE izi_example_spreadsheet;')
+  for r in res:
+    izi.query_insert('izi_example_spreadsheet', r)
+        </field>
+    </record>
+</data>
+</odoo>

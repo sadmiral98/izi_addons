@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="izi_lab_api_key_wizard" model="ir.ui.view">
+            <field name="name">IZI Lab API Key</field>
+            <field name="model">izi.lab.api.key.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <div style="white-space: pre-line;">
+                        <p>You are accessing the <b>Premium Features of IZI Analytic Dashboard.</b> 
+                        You need to input a valid API key to continue your access. 
+                        Please get your API key from your <b>IZI Lab Account</b> and input the API key here or in the company settings.</p>
+                    </div>
+                    <group>
+                        <field name="izi_lab_api_key"/>
+                    </group>
+                    <footer>
+                        <button type="object" name="action_update_izi_lab_api_key" string="Submit API Key" class="oe_highlight"/>
+                        <button type="object" name="action_access_izi_lab" string="Login to Lab"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

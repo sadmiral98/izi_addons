@@ -1,0 +1,21 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"izi_dashboard.access_izi_dashboard_crud_group_user","IZI Dashboard Access for Group User: CRUD","izi_dashboard.model_izi_dashboard",izi_dashboard.group_user_dashboard,1,1,0,0
+"izi_dashboard.access_izi_dashboard_crud_group_manager","IZI Dashboard Access for Group Manager: CRUD","izi_dashboard.model_izi_dashboard",izi_dashboard.group_manager_dashboard,1,1,1,1
+"izi_dashboard.access_izi_dashboard_block_crud_group_user","IZI Dashboard Block Access for Group User: CRUD","izi_dashboard.model_izi_dashboard_block",izi_dashboard.group_user_dashboard,1,0,0,0
+"izi_dashboard.access_izi_dashboard_block_crud_group_manager","IZI Dashboard Block Access for Group Manager: CRUD","izi_dashboard.model_izi_dashboard_block",izi_dashboard.group_manager_dashboard,1,1,1,1
+"izi_dashboard.access_izi_dashboard_theme_crud_group_user","IZI Dashboard Theme Access for Group User: CRUD","izi_dashboard.model_izi_dashboard_theme",izi_dashboard.group_user_dashboard,1,1,0,0
+"izi_dashboard.access_izi_dashboard_theme_crud_group_manager","IZI Dashboard Theme Access for Group Manager: CRUD","izi_dashboard.model_izi_dashboard_theme",izi_dashboard.group_manager_dashboard,1,1,1,1
+"izi_dashboard.access_izi_visual_type_crud_group_user","IZI Visual Type Access for Group User: CRUD","izi_dashboard.model_izi_visual_type",izi_dashboard.group_user_dashboard,1,0,0,0
+"izi_dashboard.access_izi_visual_type_crud_group_manager","IZI Visual Type Access for Group Manager: CRUD","izi_dashboard.model_izi_visual_type",izi_dashboard.group_manager_dashboard,1,1,1,1
+"izi_dashboard.access_izi_visual_config_crud_group_user","IZI Visual Config Access for Group User: CRUD","izi_dashboard.model_izi_visual_config",izi_dashboard.group_user_dashboard,1,0,0,0
+"izi_dashboard.access_izi_visual_config_crud_group_manager","IZI Visual Config Access for Group Manager: CRUD","izi_dashboard.model_izi_visual_config",izi_dashboard.group_manager_dashboard,1,1,1,1
+"izi_dashboard.access_izi_visual_config_value_crud_group_user","IZI Visual Config Value Access for Group User: CRUD","izi_dashboard.model_izi_visual_config_value",izi_dashboard.group_user_dashboard,1,0,0,0
+"izi_dashboard.access_izi_visual_config_value_crud_group_manager","IZI Visual Config Value Access for Group Manager: CRUD","izi_dashboard.model_izi_visual_config_value",izi_dashboard.group_manager_dashboard,1,1,1,1
+"izi_dashboard.access_izi_analysis_visual_config_crud_group_user","IZI Analysis Visual Config Access for Group User: CRUD","izi_dashboard.model_izi_analysis_visual_config",izi_dashboard.group_user_dashboard,1,0,0,0
+"izi_dashboard.access_izi_analysis_visual_config_crud_group_manager","IZI Analysis Visual Config Access for Group Manager: CRUD","izi_dashboard.model_izi_analysis_visual_config",izi_dashboard.group_manager_dashboard,1,1,1,1
+"izi_dashboard.access_izi_dashboard_filter_crud_group_user","IZI Dashboard Filter Access for Group User: CRUD","izi_dashboard.model_izi_dashboard_filter",izi_dashboard.group_user_dashboard,1,1,1,1
+"izi_dashboard.access_izi_dashboard_filter_value_crud_group_user","IZI Dashboard Filter Value Access for Group User: CRUD","izi_dashboard.model_izi_dashboard_filter_value",izi_dashboard.group_user_dashboard,1,1,1,1
+"izi_dashboard.access_izi_dashboard_filter_analysis_crud_group_user","IZI Dashboard Filter Analysis Access for Group User: CRUD","izi_dashboard.model_izi_dashboard_filter_analysis",izi_dashboard.group_user_dashboard,1,1,1,1
+"izi_dashboard.access_izi_dashboard_config_wizard_crud_group_user","IZI Dashboard Config Wizard Access for Group User: CRUD","izi_dashboard.model_izi_dashboard_config_wizard",izi_dashboard.group_user_dashboard,1,1,1,1
+"izi_dashboard.access_izi_lab_api_key_wizard_crud_group_user","IZI Lab API Key Wizard Access for Group User: CRUD","izi_dashboard.model_izi_lab_api_key_wizard",izi_dashboard.group_user_dashboard,1,1,1,1
+"izi_dashboard.access_izi_dashboard_token","IZI Dashboard Token Access","izi_dashboard.model_izi_dashboard_token",izi_dashboard.group_user_dashboard,1,1,1,1

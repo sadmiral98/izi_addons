@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data noupdate="0">
+<!--    <template id="izi_payment_midtrans.confirmation_rename_acquirer_name"-->
+<!--              name="Payment Confirmation: Rename Acquirer Name" inherit_id="website_sale.confirmation">-->
+<!--      <xpath expr="//td[@colspan='2']" position="replace">-->
+<!--        <td colspan="2">-->
+<!--          <t t-if="payment_tx_id.acquirer_id.provider == 'midtrans'" t-esc="payment_tx_id.get_payment_type_name()"/>-->
+<!--          <t t-else="" t-esc="order.get_portal_last_transaction().acquirer_id.name"/>-->
+<!--        </td>-->
+<!--      </xpath>-->
+<!--    </template>-->
+
+<!--    <template id="izi_payment_midtrans.confirmation_show_payment_instruction"-->
+<!--              name="Payment Confirmation: Show Payment Instruction" inherit_id="website_sale.confirmation">-->
+<!--      <xpath expr="//table[hasclass('table')]/following-sibling::t[1]" position="after">-->
+<!--        <div t-if="payment_tx_id.has_payment_instructions()" id="download_instructions" class="text-center">-->
+<!--          <a t-att-href="payment_tx_id.get_payment_instruction_pdf_url()" target="_blank"-->
+<!--             class="btn btn-outline-primary btn-lg mt-3">-->
+<!--            <i class="fa fa-download"/>-->
+<!--            <span>Download Payment Instructions</span>-->
+<!--          </a>-->
+<!--        </div>-->
+<!--      </xpath>-->
+<!--    </template>-->
+
+    <template id="izi_payment_midtrans.payment_confirmation_status_hide_state_msg"
+              name="Payment Confirmation Status: Hide State Message"
+              inherit_id="payment.payment_confirmation_status">
+      <xpath expr="//span[@t-esc='payment_tx_id.state_message']" position="attributes">
+        <attribute name="class">d-none</attribute>
+      </xpath>
+      <xpath expr="." position="inside">
+        <div t-if="payment_tx_id.has_payment_instructions()" id="download_instructions" class="text-center">
+          <a t-att-href="payment_tx_id.get_payment_instruction_pdf_url()" target="_blank"
+             class="btn btn-outline-primary btn-lg mb-3">
+            <i class="fa fa-download"/>
+            <span>Download Payment Instructions</span>
+          </a>
+        </div>
+      </xpath>
+    </template>
+  </data>
+</odoo>

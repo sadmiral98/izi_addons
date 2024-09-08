@@ -1,0 +1,2 @@
+mysql-connector-python==8.0.22 ; python_version <= '3.5.6'
+mysql-connector-python==8.0.28 ; python_version > '3.5.6'

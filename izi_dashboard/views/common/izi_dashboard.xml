@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="izi_dashboard" model="ir.ui.view">
+            <field name="name">izi.dashboard</field>
+            <field name="model">izi.dashboard</field>
+            <field name="type">izidashboard</field>
+            <field name="arch" type="xml">
+                <izidashboard string="Dashboard">
+                </izidashboard>
+            </field>
+        </record>
+
+        <record id="izi_dashboard_form" model="ir.ui.view">
+            <field name="name">izi.dashboard.form</field>
+            <field name="model">izi.dashboard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="theme_id"/>
+                                <field name="new_block_position" invisible="1"/>
+                                <field name="sequence"/>
+                                <field name="rtl" widget="boolean_toggle"/>
+                                <field name="animation" widget="boolean_toggle"/>
+                            </group>
+                            <group>
+                                <field name="date_format"/>
+                                <field name="start_date" attrs="{'invisible': [('date_format', '!=', 'custom')]}"/>
+                                <field name="end_date" attrs="{'invisible': [('date_format', '!=', 'custom')]}"/>
+                                <field name="write_date" invisible="1"/>
+                                <field name="write_uid" invisible="1"/>
+                                <field name="refresh_interval"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Filters">
+                                <field name="filter_ids">
+                                    <tree>
+                                        <field name="name"/>
+                                        <field name="source_type"/>
+                                        <field name="selection_type"/>
+                                    </tree>
+                                    <form>
+                                        <sheet>
+                                            <group>
+                                                <group>
+                                                    <field name="name"/>
+                                                    <field name="source_type"/>
+                                                    <field name="selection_type"/>
+                                                </group>
+                                                <group>
+                                                    <field name="value_ids" widget="many2many_tags" attrs="{'required': [('source_type', '=', 'predefined')], 'invisible': [('source_type', '!=', 'predefined')]}"/>
+                                                    <field name="model_id" attrs="{'required': [('source_type', '=', 'model')], 'invisible': [('source_type', '!=', 'model')]}"/>
+                                                    <field name="model_field_id" domain="[('model_id', '=', model_id)]" attrs="{'required': [('source_type', '=', 'model')], 'invisible': [('source_type', '!=', 'model')]}"/>
+                                                    <field name="model_field_values" attrs="{'required': [('source_type', '=', 'model')], 'invisible': [('source_type', '!=', 'model')]}"/>
+                                                    <field name="table_id" attrs="{'required': [('source_type', '=', 'table')], 'invisible': [('source_type', '!=', 'table')]}"/>
+                                                    <field name="table_field_id" domain="[('table_id', '=', table_id)]" attrs="{'required': [('source_type', '=', 'table')], 'invisible': [('source_type', '!=', 'table')]}"/>
+                                                </group>
+                                            </group>
+                                            <notebook>
+                                                <page string="Applied To">
+                                                    <field name="filter_analysis_ids">
+                                                    <tree editable="bottom">
+                                                        <field name="allowed_analysis_ids" invisible="1"/>
+                                                        <field name="allowed_field_ids" invisible="1"/>
+                                                        <!-- <field name="analysis_id" domain="[('id', 'in', allowed_analysis_ids)]" create="0"/> -->
+                                                        <field name="analysis_id" create="0"/>
+                                                        <field name="field_id" domain="[('id', 'in', allowed_field_ids)]" create="0" attrs="{'invisible': [('analysis_id', '=', False)]}"/>
+                                                        <field name="operator"/>
+                                                    </tree>
+                                                    </field>
+                                                </page>
+                                            </notebook>
+                                        </sheet>
+                                    </form>
+                                </field>
+                            </page>
+                            <page string="Analysis Blocks" invisible="1">
+                                <field name="block_ids">
+                                    <tree>
+                                        <field name="name"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Groups">
+                                <field name="group_ids">
+                                    <tree>
+                                        <field name="display_name"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Menus">
+                                <field name="menu_ids">
+                                    <tree>
+                                        <field name="display_name"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <footer class="izi_replace_footer">
+                        <button class="btn btn-primary" string="Save &amp; Close" name="action_save_and_close" type="object"/>
+                        <button special="cancel" string="Close" class="btn-secondary"/>
+                        <button string="Duplicate" name="action_duplicate" type="object"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

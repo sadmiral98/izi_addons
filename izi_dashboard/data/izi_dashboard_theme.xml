@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data noupdate="0">
+    <record model="izi.dashboard.theme" id="izi_dashboard.izi_dashboard_theme_colorful">
+      <field name="name">Colorful</field>
+    </record>
+    <record model="izi.dashboard.theme" id="izi_dashboard.izi_dashboard_theme_contrast">
+      <field name="name">Contrast</field>
+    </record>
+    <record model="izi.dashboard.theme" id="izi_dashboard.izi_dashboard_theme_joyful">
+      <field name="name">Joyful</field>
+    </record>
+    <record model="izi.dashboard.theme" id="izi_dashboard.izi_dashboard_theme_mint">
+      <field name="name">Mint</field>
+    </record>
+    <record model="izi.dashboard.theme" id="izi_dashboard.izi_dashboard_theme_prime">
+      <field name="name">Prime</field>
+    </record>
+    <record model="izi.dashboard.theme" id="izi_dashboard.izi_dashboard_theme_simple">
+      <field name="name">Simple</field>
+    </record>
+    <record model="izi.dashboard.theme" id="izi_dashboard.izi_dashboard_theme_borneo">
+      <field name="name">Borneo</field>
+    </record>
+    <record model="izi.dashboard.theme" id="izi_dashboard.izi_dashboard_theme_day">
+      <field name="name">Day</field>
+    </record>
+    <record model="izi.dashboard.theme" id="izi_dashboard.izi_dashboard_theme_dusk">
+      <field name="name">Dusk</field>
+    </record>
+    <record model="izi.dashboard.theme" id="izi_dashboard.izi_dashboard_theme_happiness">
+      <field name="name">Happiness</field>
+    </record>
+    <record model="izi.dashboard.theme" id="izi_dashboard.izi_dashboard_theme_metro">
+      <field name="name">Metro</field>
+    </record>
+    <record model="izi.dashboard.theme" id="izi_dashboard.izi_dashboard_theme_night">
+      <field name="name">Night</field>
+    </record>
+  </data>
+</odoo>
+
+
